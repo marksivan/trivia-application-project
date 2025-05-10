@@ -13,5 +13,4 @@ public interface PriorityQueue<Key, Value>{
 
 	public abstract Key remove();
 
-	public abstract Key peek();
 }
