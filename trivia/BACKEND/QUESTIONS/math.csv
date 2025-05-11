@@ -1,0 +1,50 @@
+question,optionA,optionB,optionC,optionD,correctOptionIndex,difficultyLevel
+"If 3x - 5 = 16, what is the value of x?", 5, 6, 7, 8, 2, 1
+"What is the sum of the interior angles of a pentagon?", 540°, 360°, 720°, 450°, 0, 8
+"Solve: (6² - 4²) ÷ 2", 10, 11, 8, 14, 3, 2
+"What is the area of a triangle with base 10 cm and height 5 cm?", 50 cm², 25 cm², 30 cm², 40 cm², 1, 5
+"If a number is doubled and then 10 is subtracted, the result is 24. What is the number?", 17, 18, 20, 16, 3, 5
+"Simplify: 5 + 3 × (12 ÷ 4)", 11, 14, 17, 15, 2, 7
+"What is the average of the first 5 prime numbers?", 5, 5.4, 6.2, 6, 1, 8
+"How many factors does 36 have?", 9, 7, 8, 6, 0, 8
+"If 2x + 3 = 11, what is x²?", 16, 25, 36, 49, 0, 1
+"What is the sum of the squares of the first three positive integers?", 9, 14, 13, 11, 2, 8
+"What is the solution to the equation 2(x - 3) = 4x + 1?", "x = -3", "x = -7", "x = 3", "x = 2", 1, 10
+"What is the volume of a cube with surface area 150 cm²?", 25 cm³, 27 cm³, 30 cm³, 125 cm³, 0, 10
+"If f(x) = x² - 3x + 2, what is f(4)?", 6, 2, 4, 1, 0, 10
+"The number of diagonals in a hexagon is?", 9, 12, 15, 18, 1, 10
+"Simplify: (x² - 9)/(x - 3)", x + 3, x - 3, x² - 3, x² + 3, 0, 10
+"The average of 6, 8, x, and 10 is 9. What is x?", 10, 12, 8, 14, 1, 10
+"What is the slope of the line passing through (2,3) and (6,11)?", 2, 3, 4, 5, 0, 10
+"How many distinct permutations of the word 'LEVEL'?", 30, 60, 120, 240, 0, 10
+"If log₂x = 5, what is x?", 25, 10, 32, 64, 2, 10
+"Which of these is the graph of y = |x - 3| + 2 symmetric about?", x = 3, y = 2, y-axis, x-axis, 2, 10
+"What is the median of the data: 4, 6, 7, 9, 10, 12, 15?", 9, 8, 10, 7, 0, 10
+"If x⁴ = 81, what is x?", 3, -3, ±3, 9, 2, 10
+"What is the probability of rolling a sum of 9 on two dice?", 1/9, 1/8, 4/36, 1/6, 2, 10
+"Solve for x: 1/x + 1/(x+2) = 3/10", 2, 3, 5, 4, 3, 10
+"If the radius of a circle is doubled, what happens to the area?", "It quadruples", "It doubles", "It triples", "It remains the same", 0, 10
+"What is the 7th term of the arithmetic sequence 3, 7, 11, 15,...?", 27, 29, 31, 25, 2, 10
+"A square has perimeter 48 cm. What is its area?", 144, 324, 196, 256, 0, 10
+"How many 3-digit numbers can be formed using 1, 2, 3, 4 without repetition?", 24, 64, 12, 36, 0, 10
+"Solve for y: 3y - 2(2y - 5) = 4", y = -6, y = 6, y = 4, y = 8, 1, 10
+"If f(x) = 2x + 1 and g(x) = x², what is f(g(3))?", 19, 21, 25, 23, 0, 10
+"If 3x - 2y = 6 and x + y = 4, what is the value of x?", 2, 3, 4, 5, 1, 10
+"What is the LCM of 15, 20, and 30?", 60, 90, 120, 150, 0, 10
+"A rectangular prism has dimensions 2, 3, and 4. What is its surface area?", 52, 94, 88, 76, 2, 10
+"What is the sum of the first 10 positive even numbers?", 110, 120, 100, 130, 0, 10
+"Solve for x: x² + 4x - 21 = 0", x = 3, x = -3, x = 7, x = -7, 2, 11
+"What is the derivative of f(x) = 3x³ - 5x² + 4x - 2?", 9x² - 10x + 4, 9x² - 5x + 4, 3x² - 5x + 4, 3x² - 10x + 4, 2, 12
+"What is the integral of 2x dx?", x²+ C, x²/2 + C, x³ + C, 2x + C, 2, 12
+"If 7^(x-2) = 49, what is x?", 3, 2, 1, 4, 3, 11
+"Find the sum of the roots of the quadratic equation x² - 5x + 6 = 0", 5, 3, -5, -6, 0, 11
+"If the sum of a geometric series is 21 and the first term is 7, what is the common ratio?", 3, 2, 1.5, 2.5, 1, 12
+"The sum of two numbers is 20, and their difference is 4. What is the product of the two numbers?", 96, 110, 90, 80, 1, 11
+"How many ways can you arrange the letters in the word 'COMPUTER'?", 5040, 40320, 2520, 10080, 0, 12
+"What is the value of log₁₀(1000)?", 1, 2, 3, 4, 2, 11
+"Solve for x: 5^(x + 1) = 125", x = 1, x = 2, x = 3, x = 4, 2, 11
+"A circle has radius 5 cm. What is its area?", 25π cm², 25 cm², 50 cm², 20 cm², 2, 12
+"How many different ways can a committee of 3 people be selected from a group of 10?", 120, 100, 120, 90, 3, 12
+"What is the sum of the first 100 prime numbers?", 24133, 24310, 24000, 24200, 0, 12
+"What is the largest solution to the equation x² + 6x - 7 = 0?", 1, -1, 7, -7, 3, 12
+"What is the next number in the sequence: 2, 5, 10, 17, 26, ...?", 37, 39, 40, 38, 0, 12

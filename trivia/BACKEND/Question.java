@@ -6,13 +6,13 @@ import java.util.*;
 public class Question{
 	private String questionText;
 	private String[] answerOptions;
-	private int correctIndex;
+	private int correctAnswerIndex;
 	private int difficultyLevel;
 
-	public Question(questionText, answerOptions, correctIndex, difficultyLevel){
+	public Question(String questionText, String[] answerOptions, int correctAnswerIndex, int difficultyLevel){
 		this.questionText = questionText;
 		this.answerOptions = answerOptions;
-		this.correctIndex = correctIndex;
+		this.correctAnswerIndex = correctAnswerIndex;
 		this.difficultyLevel = difficultyLevel;
 	}
 
@@ -24,8 +24,8 @@ public class Question{
 		return this.answerOptions;
 	}
 
-	public int getCorrectIndex(){
-		return this.correctIndex;
+	public int getCorrectAnswerIndex(){
+		return this.correctAnswerIndex;
 	}
 
 	public int getDifficultyLevel(){

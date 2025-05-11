@@ -4,13 +4,13 @@ import java.util.Comparator;
 
  
 
-public interface PriorityQueue<Key, Value>{
+public interface PriorityQueue<Question>{
 	public abstract boolean isEmpty();
 
 	public abstract int size();
 
-	public abstract void put(Key key, Value val, Comparator<Key> comparator);
+	public abstract void push(Question question, Comparator<Question> comparator);
 
-	public abstract Key remove();
+	public abstract Question pop();
 
 }
