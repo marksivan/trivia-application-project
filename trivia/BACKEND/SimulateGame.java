@@ -51,8 +51,8 @@ public class SimulateGame{
 			options[1] = questionDetails[2];
 			options[2] = questionDetails[3];
 			options[3] = questionDetails[4];
-			int correctAnswerIndex = Integer.parseInt(questionDetails[5].replace("\"", "").trim());
-            int difficultyLevel = Integer.parseInt(questionDetails[6].replace("\"", "").trim());
+			int correctAnswerIndex = Integer.parseInt(questionDetails[5].trim());
+            int difficultyLevel = Integer.parseInt(questionDetails[6].trim());
 
 			Question newQuestion = new Question(questionText, options, correctAnswerIndex, difficultyLevel);
 
@@ -85,10 +85,10 @@ public class SimulateGame{
 	        Question q;
 
 	        // Decide where to pull the question from
-	        if (wrongStreak >= 2 && !easyQuestions.isEmpty()) {
+	        if (wrongStreak >= 3 && !easyQuestions.isEmpty()) {
 	            q = easyQuestions.pop(); // from MinHeap
 	            wrongStreak = 0; // reset after fallback
-	        } else if (correctStreak >= 2 && !hardQuestions.isEmpty()) {
+	        } else if (correctStreak >= 3 && !hardQuestions.isEmpty()) {
 	            q = hardQuestions.pop(); // from MaxHeap
 	            correctStreak = 0; // reset after jump
 	        } else if (!mediumQuestions.isEmpty()) {
@@ -98,8 +98,17 @@ public class SimulateGame{
 	            break;
 	        }
 
+	        String difficulty = "";
+	        if(q.getDifficultyLevel() == 10){
+	        	difficulty = " (Medium)";
+	        }else if (q.getDifficultyLevel()<10){
+	        	difficulty = " (Easy)";
+	        }else{
+	        	difficulty = " (Hard)";
+	        }
+
 	        // Ask the question
-	        System.out.println("\nQuestion " + (questionsAnswered + 1) + ":");
+	        System.out.println("\nQuestion " + (questionsAnswered + 1) + difficulty + ":");
 	        System.out.println(q.getQuestionText());
 	        String[] options = q.getAnswerOptions();
 	        System.out.println("A. " + options[0]);
@@ -148,7 +157,7 @@ public class SimulateGame{
     	Scanner scanner = new Scanner(System.in);
 
     	System.out.println("Choose a subject: ");
-        System.out.println("1. Math\n2. Science\n3. Verbal Reasoning\n4. Technology\n5. Sports\n6. History\n7. geography\n8. Health and Medicine");
+        System.out.println("1. Math\n2. Science\n3. Verbal Reasoning\n4. Technology\n5. Sports\n6. History\n7. Geography\n8. Health and Medicine");
         System.out.println("------------------------");
         SimulateGame game = new SimulateGame();
 

@@ -20,7 +20,6 @@ question,optionA,optionB,optionC,optionD,correctOptionIndex,difficultyLevel
 "If log₂x = 5, what is x?", 25, 10, 32, 64, 2, 10
 "Which of these is the graph of y = |x - 3| + 2 symmetric about?", x = 3, y = 2, y-axis, x-axis, 2, 10
 "What is the median of the data: 4, 6, 7, 9, 10, 12, 15?", 9, 8, 10, 7, 0, 10
-"If x⁴ = 81, what is x?", 3, -3, ±3, 9, 2, 10
 "What is the probability of rolling a sum of 9 on two dice?", 1/9, 1/8, 4/36, 1/6, 2, 10
 "Solve for x: 1/x + 1/(x+2) = 3/10", 2, 3, 5, 4, 3, 10
 "If the radius of a circle is doubled, what happens to the area?", "It quadruples", "It doubles", "It triples", "It remains the same", 0, 10
