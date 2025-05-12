@@ -50,7 +50,7 @@ public class GameController {
         totalPossibleScore = 0;
         currentQuestions.clear();
         // Pre-populate some questions from medium difficulty
-        if (game.mediumQuestions != null && !game.mediumQuestions.isEmpty()) {
+       if (game.mediumQuestions != null && !game.mediumQuestions.isEmpty()) {
             currentQuestions.addAll(game.mediumQuestions);
             Collections.shuffle(currentQuestions);
         }
