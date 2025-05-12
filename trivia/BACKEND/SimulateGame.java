@@ -1,4 +1,4 @@
-package trivia;
+package trivia.BACKEND;
 
 import java.io.*;
 import java.util.*;
