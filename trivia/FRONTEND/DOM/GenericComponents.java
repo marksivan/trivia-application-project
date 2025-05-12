@@ -47,7 +47,7 @@ public class GenericComponents {
             
             if (hasShadow) {
                 button.setBorder(BorderFactory.createCompoundBorder(
-                    BorderFactory.createLineBorder(new Color(0, 0, 0, 50), 1),
+                    BorderFactory.createLineBorder(new Color(0, 0, 0, 119), 1),
                     button.getBorder()
                 ));
             }
@@ -91,29 +91,6 @@ public class GenericComponents {
             field.setBackground(backgroundColor);
             field.setForeground(textColor);
             field.setEditable(isEditable);
-        
-            field.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createLineBorder(borderColor, borderRadius),
-                BorderFactory.createEmptyBorder(padding, padding, padding, padding)
-            ));
- 
-            if (hasFocusEffect) {
-                field.addFocusListener(new FocusAdapter() {
-                    public void focusGained(FocusEvent e) {
-                        field.setBorder(BorderFactory.createCompoundBorder(
-                            BorderFactory.createLineBorder(borderColor.darker(), borderRadius),
-                            BorderFactory.createEmptyBorder(padding, padding, padding, padding)
-                        ));
-                    }
-                    public void focusLost(FocusEvent e) {
-                        field.setBorder(BorderFactory.createCompoundBorder(
-                            BorderFactory.createLineBorder(borderColor, borderRadius),
-                            BorderFactory.createEmptyBorder(padding, padding, padding, padding)
-                        ));
-                    }
-                });
-            }
-            
 
             if (onTextChange != null) {
                 field.getDocument().addDocumentListener(new DocumentListener() {
@@ -390,7 +367,7 @@ public class GenericComponents {
     public static class ThemeManager {
         private static boolean isDarkMode = false;
         
-        public static final Color LIGHT_BACKGROUND = Color.WHITE;
+        public static final Color LIGHT_BACKGROUND = new Color(255, 255, 255);
         public static final Color LIGHT_TEXT = new Color(44, 62, 80);
         public static final Color LIGHT_BORDER = new Color(233, 236, 239);
         public static final Color LIGHT_HEADER = new Color(41, 128, 185);
