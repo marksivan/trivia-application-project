@@ -27,7 +27,7 @@ public class LoginPage extends JPanel {
         JPanel titlePanel = new JPanel(new BorderLayout());
         titlePanel.setOpaque(false);
         titlePanel.add(new GenericComponents.QuizLabel(
-            "Welcome to Trivia Game",
+            "Welcome to Mark & Irenee Trivia Game",
             new Font("Helvetica", Font.BOLD, 24),
             GenericComponents.ThemeManager.getText(),
             null, 10, false, false, true
@@ -109,8 +109,6 @@ public class LoginPage extends JPanel {
         gbc.weightx = 1.0;
         gbc.anchor = GridBagConstraints.CENTER;
         formPanel.add(errorLabel, gbc);
-        
-        // Add form panel to card
         cardPanel.add(formPanel, BorderLayout.CENTER);
         
         // Buttons panel
@@ -188,7 +186,7 @@ public class LoginPage extends JPanel {
         errorLabel.setText("Logging in...");
         errorLabel.setForeground(GenericComponents.ThemeManager.getText());
         
-        // Simulate network delay for better UX
+        // Simulate network delay for better user experience
         Timer timer = new Timer(500, e -> {
             if (AuthManager.getInstance().login(username, password)) {
                 if (rememberMe) {

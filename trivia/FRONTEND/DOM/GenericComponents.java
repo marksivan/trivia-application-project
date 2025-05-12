@@ -144,10 +144,10 @@ public class GenericComponents {
             label.setBackground(backgroundColor);
             label.setOpaque(backgroundColor != null);
             
-            // Padding
+            
             label.setBorder(BorderFactory.createEmptyBorder(padding, padding, padding, padding));
             
-            // Shadow effect
+        
             if (hasShadow) {
                 label.setBorder(BorderFactory.createCompoundBorder(
                     BorderFactory.createLineBorder(new Color(0, 0, 0, 30), 1),
@@ -155,7 +155,7 @@ public class GenericComponents {
                 ));
             }
             
-            // Text decoration
+
             if (isUnderlined) {
                 Font originalFont = label.getFont();
                 Map<TextAttribute, Object> attributes = new HashMap<>(originalFont.getAttributes());
@@ -163,13 +163,11 @@ public class GenericComponents {
                 label.setFont(originalFont.deriveFont(attributes));
             }
             
-            // Alignment
             if (isCentered) {
                 label.setHorizontalAlignment(SwingConstants.CENTER);
             }
         }
         
-        // Constructor overload for simple usage
         public QuizLabel(String text) {
             this(text, null, null, null, 0, false, false, false);
         }
@@ -191,11 +189,10 @@ public class GenericComponents {
             super(new JPanel(layout));
             JPanel panel = (JPanel) getComponent();
             
-            // Basic styling
             panel.setBackground(backgroundColor);
             panel.setOpaque(isOpaque);
             
-            // Border styling
+
             if (borderRadius > 0) {
                 panel.setBorder(BorderFactory.createCompoundBorder(
                     BorderFactory.createLineBorder(borderColor, borderRadius),
@@ -203,15 +200,14 @@ public class GenericComponents {
                 ));
             }
             
-            // Shadow effect
+
             if (hasShadow) {
                 panel.setBorder(BorderFactory.createCompoundBorder(
                     BorderFactory.createLineBorder(new Color(0, 0, 0, 50), 1),
                     panel.getBorder()
                 ));
             }
-            
-            // Gradient background
+
             if (hasGradient) {
                 panel.setLayout(new BorderLayout());
                 JPanel gradientPanel = new JPanel() {
@@ -251,85 +247,6 @@ public class GenericComponents {
         }
     }
 
-    public static class QuizProgressBar extends ComponentNode {
-        public QuizProgressBar(
-            int min,
-            int max,
-            Color foregroundColor,
-            Color backgroundColor,
-            boolean isStripped,
-            boolean isAnimated,
-            String stringFormat,
-            Font font
-        ) {
-            super(new JProgressBar(min, max));
-            JProgressBar progress = (JProgressBar) getComponent();
-            
-            // Basic styling
-            progress.setStringPainted(true);
-            progress.setForeground(foregroundColor != null ? foregroundColor : new Color(46, 204, 113));
-            progress.setBackground(backgroundColor != null ? backgroundColor : new Color(236, 240, 241));
-            
-            if (font != null) {
-                progress.setFont(font);
-            }
-            
-            // Custom string format
-            if (stringFormat != null) {
-                progress.setString(String.format(stringFormat, progress.getValue()));
-                progress.addChangeListener(e -> 
-                    progress.setString(String.format(stringFormat, progress.getValue()))
-                );
-            }
-            
-            // Stripped effect
-            if (isStripped) {
-                progress.setBorderPainted(false);
-                progress.setUI(new javax.swing.plaf.basic.BasicProgressBarUI() {
-                    @Override
-                    protected void paintDeterminate(Graphics g, JComponent c) {
-                        Graphics2D g2d = (Graphics2D) g;
-                        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-                        
-                        int barRectWidth = progress.getWidth();
-                        int barRectHeight = progress.getHeight();
-                        
-                        // Paint background
-                        g2d.setColor(progress.getBackground());
-                        g2d.fillRect(0, 0, barRectWidth, barRectHeight);
-                        
-                        // Paint progress
-                        g2d.setColor(progress.getForeground());
-                        int stripWidth = 10;
-                        double progressValue = progress.getPercentComplete();
-                        int progressWidth = (int) (barRectWidth * progressValue);
-                        
-                        for (int x = 0; x < progressWidth; x += stripWidth * 2) {
-                            g2d.fillRect(x, 0, stripWidth, barRectHeight);
-                        }
-                    }
-                });
-            }
-            
-            // Animation
-            if (isAnimated) {
-                javax.swing.Timer timer = new javax.swing.Timer(50, e -> {
-                    int val = progress.getValue();
-                    if (val < progress.getMaximum()) {
-                        progress.setValue(val + 1);
-                    } else {
-                        progress.setValue(progress.getMinimum());
-                    }
-                });
-                timer.start();
-            }
-        }
-        
-        // Constructor overload for simple usage
-        public QuizProgressBar() {
-            this(0, 100, null, null, false, false, "%d%%", null);
-        }
-    }
 
     public static class QuizRadioButton extends ComponentNode {
         public QuizRadioButton(String text) {
@@ -337,15 +254,6 @@ public class GenericComponents {
             JRadioButton radio = (JRadioButton) getComponent();
             radio.setFont(new Font("Helvetica", Font.PLAIN, 14));
             radio.setForeground(new Color(44, 62, 80));
-        }
-    }
-
-    public static class QuizCheckBox extends ComponentNode {
-        public QuizCheckBox(String text) {
-            super(new JCheckBox(text));
-            JCheckBox checkbox = (JCheckBox) getComponent();
-            checkbox.setFont(new Font("Helvetica", Font.PLAIN, 14));
-            checkbox.setForeground(new Color(44, 62, 80));
         }
     }
 
@@ -513,187 +421,12 @@ public class GenericComponents {
             int strHeight = fm.getAscent();
             g2.drawString(timeStr, x + diameter / 2 - strWidth / 2, y + diameter / 2 + strHeight / 4);
         }
-    }
-
-    public static class QuizAlert extends ComponentNode {
-        public QuizAlert(
-            String message,
-            AlertType type,
-            boolean isDismissible
-        ) {
-            super(new JPanel(new BorderLayout()));
-            JPanel alert = (JPanel) getComponent();
-            
-            Color bgColor, borderColor;
-            switch (type) {
-                case SUCCESS:
-                    bgColor = new Color(39, 174, 96);
-                    borderColor = new Color(46, 204, 113);
-                    break;
-                case WARNING:
-                    bgColor = new Color(241, 196, 15);
-                    borderColor = new Color(243, 156, 18);
-                    break;
-                case ERROR:
-                    bgColor = new Color(231, 76, 60);
-                    borderColor = new Color(192, 57, 43);
-                    break;
-                default:
-                    bgColor = new Color(52, 152, 219);
-                    borderColor = new Color(41, 128, 185);
-            }
-            
-            alert.setBackground(bgColor);
-            alert.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createLineBorder(borderColor, 1),
-                BorderFactory.createEmptyBorder(10, 15, 10, 15)
-            ));
-
-            JLabel messageLabel = new JLabel(message);
-            messageLabel.setFont(new Font("Helvetica", Font.PLAIN, 14));
-            messageLabel.setForeground(Color.WHITE);
-            alert.add(messageLabel, BorderLayout.CENTER);
-
-            if (isDismissible) {
-                JButton closeButton = new JButton("×");
-                closeButton.setFont(new Font("Helvetica", Font.BOLD, 16));
-                closeButton.setForeground(Color.WHITE);
-                closeButton.setBackground(bgColor);
-                closeButton.setBorderPainted(false);
-                closeButton.setFocusPainted(false);
-                closeButton.addActionListener(e -> alert.setVisible(false));
-                alert.add(closeButton, BorderLayout.EAST);
-            }
-        }
-
-        public enum AlertType {
-            SUCCESS, WARNING, ERROR, INFO
-        }
-    }
-
-    public static class QuizToolbar extends ComponentNode {
-        public QuizToolbar() {
-            super(new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 5)));
-            JPanel toolbar = (JPanel) getComponent();
-            toolbar.setBackground(new Color(248, 249, 250));
-            toolbar.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createMatteBorder(0, 0, 1, 0, new Color(233, 236, 239)),
-                BorderFactory.createEmptyBorder(5, 10, 5, 10)
-            ));
-        }
-
-        public void addButton(String text, Color color, Consumer<ActionEvent> onClick) {
-            JPanel toolbar = (JPanel) getComponent();
-            QuizButton button = new QuizButton(
-                text, color, color.darker(), Color.WHITE,
-                new Font("Helvetica", Font.PLAIN, 14),
-                3, 8, false, true, onClick
-            );
-            toolbar.add(button.getComponent());
-        }
-    }
-
-    public static class QuizRoot extends ComponentNode {
-        // Header Components
-        public static class Header {
-            public static QuizHeader createHeader(String title, String score) {
-                return new QuizHeader(title, score);
-            }
-
-            public static QuizToolbar createToolbar() {
-                return new QuizToolbar();
-            }
-        }
-
-        // Body Components
-        public static class Body {
-            public static QuizPanel createPanel(
-                Color backgroundColor,
-                Color borderColor,
-                int borderRadius,
-                int padding,
-                boolean hasShadow,
-                boolean isOpaque,
-                LayoutManager layout,
-                boolean hasGradient,
-                Color gradientStart,
-                Color gradientEnd
-            ) {
-                return new QuizPanel(
-                    backgroundColor, borderColor, borderRadius, padding,
-                    hasShadow, isOpaque, layout, hasGradient,
-                    gradientStart, gradientEnd
-                );
-            }
-
-            public static QuizQuestion createQuestion(String question, String[] options, String correctAnswer) {
-                return new QuizQuestion(question, options, correctAnswer);
-            }
-
-            public static QuizCircularClock createClock() {
-                return new QuizCircularClock();
-            }
-
-            public static QuizProgressBar createProgressBar(
-                int min,
-                int max,
-                Color foregroundColor,
-                Color backgroundColor,
-                boolean isStripped,
-                boolean isAnimated,
-                String stringFormat,
-                Font font
-            ) {
-                return new QuizProgressBar(min, max, foregroundColor, backgroundColor, isStripped, isAnimated, stringFormat, font);
-            }
-        }
-
-        // Footer Components
-        public static class Footer {
-            public static QuizToolbar createToolbar() {
-                return new QuizToolbar();
-            }
-
-            public static QuizAlert createAlert(
-                String message,
-                QuizAlert.AlertType type,
-                boolean isDismissible
-            ) {
-                return new QuizAlert(message, type, isDismissible);
-            }
-        }
 
         // Root Container
         private JPanel headerPanel;
         private JPanel bodyPanel;
         private JPanel footerPanel;
 
-        public QuizRoot() {
-            super(new JPanel(new BorderLayout()));
-            JPanel root = (JPanel) getComponent();
-            root.setBackground(Color.WHITE);
-
-            // Header
-            headerPanel = new JPanel(new BorderLayout());
-            headerPanel.setBackground(new Color(41, 128, 185));
-            headerPanel.setBorder(BorderFactory.createEmptyBorder(15, 20, 15, 20));
-            root.add(headerPanel, BorderLayout.NORTH);
-
-            // Body
-            bodyPanel = new JPanel(new BorderLayout());
-            bodyPanel.setBackground(Color.WHITE);
-            bodyPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
-            root.add(bodyPanel, BorderLayout.CENTER);
-
-            // Footer
-            footerPanel = new JPanel(new BorderLayout());
-            footerPanel.setBackground(new Color(248, 249, 250));
-            footerPanel.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createMatteBorder(1, 0, 0, 0, new Color(233, 236, 239)),
-                BorderFactory.createEmptyBorder(10, 20, 10, 20)
-            ));
-            root.add(footerPanel, BorderLayout.SOUTH);
-        }
 
         public void setHeader(ComponentNode component) {
             headerPanel.removeAll();

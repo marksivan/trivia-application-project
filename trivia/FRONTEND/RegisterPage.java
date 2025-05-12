@@ -18,14 +18,12 @@ public class RegisterPage extends JPanel {
     }
 
     private void initializeComponents() {
-        // Main container
         JPanel mainPanel = new JPanel(new GridBagLayout());
         mainPanel.setBackground(GenericComponents.ThemeManager.getBackground());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(10, 10, 10, 10);
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        // Title
         GenericComponents.QuizLabel titleLabel = new GenericComponents.QuizLabel(
             "Create New Account",
             new Font("Helvetica", Font.BOLD, 24),
@@ -138,8 +136,6 @@ public class RegisterPage extends JPanel {
 
         gbc.gridy = 6;
         mainPanel.add(buttonPanel, gbc);
-
-        // Add main panel to the center
         add(mainPanel, BorderLayout.CENTER);
     }
 
@@ -147,8 +143,6 @@ public class RegisterPage extends JPanel {
         String username = usernameField.getText().trim();
         String password = new String(passwordField.getPassword());
         String confirmPassword = new String(confirmPasswordField.getPassword());
-
-        // Clear previous error
         errorLabel.setText("");
 
         // Validate username
@@ -183,7 +177,6 @@ public class RegisterPage extends JPanel {
         errorLabel.setText("Creating account...");
         errorLabel.setForeground(GenericComponents.ThemeManager.getText());
 
-        // Simulate network delay for better UX
         Timer timer = new Timer(500, e -> {
             // Try to register the user
             if (AuthManager.getInstance().registerUser(username, password)) {

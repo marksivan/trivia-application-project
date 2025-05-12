@@ -95,7 +95,7 @@ public class HomePage extends JPanel {
 
         rootPanel.add(headerContainer, BorderLayout.NORTH);
 
-        // Footer with shadow
+        // Footer
         footerPanel = new JPanel(new BorderLayout(10, 10));
         footerPanel.setBackground(GenericComponents.ThemeManager.getFooter());
         footerPanel.setBorder(BorderFactory.createCompoundBorder(
@@ -146,12 +146,6 @@ public class HomePage extends JPanel {
         categoryPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
         String[] categories = {"General", "Science", "History", "Geography"};
-        String[] descriptions = {
-            "Test your general knowledge across various topics",
-            "Explore scientific facts and discoveries",
-            "Journey through historical events and figures",
-            "Discover geographical wonders and locations"
-        };
         
         gbc.gridy = 1;
         gbc.gridwidth = 1;
@@ -161,35 +155,11 @@ public class HomePage extends JPanel {
         
         for (int i = 0; i < categories.length; i++) {
             String category = categories[i];
-            String description = descriptions[i];
             
             JPanel cardPanel = new JPanel(new BorderLayout(10, 10));
             cardPanel.setBackground(GenericComponents.ThemeManager.getButton());
-            cardPanel.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createEmptyBorder(5, 5, 5, 5),
-                BorderFactory.createLineBorder(new Color(0, 0, 0, 30), 1)
-            ));
             cardPanel.setCursor(new Cursor(Cursor.HAND_CURSOR));
-
-            // Category icon (using emoji as placeholder)
-            String icon = "";
-            switch (category) {
-                case "General": icon = "🎯"; break;
-                case "Science": icon = "🔬"; break;
-                case "History": icon = "📚"; break;
-                case "Geography": icon = "🌍"; break;
-            }
-
-            // Create icon panel with shadow
-            JPanel iconPanel = new JPanel(new BorderLayout());
-            iconPanel.setOpaque(false);
-            GenericComponents.QuizLabel iconLabel = new GenericComponents.QuizLabel(
-                icon,
-                new Font("Helvetica", Font.PLAIN, 48),
-                GenericComponents.ThemeManager.getText(),
-                null, 10, true, false, true
-            );
-            iconPanel.add(iconLabel.getComponent(), BorderLayout.CENTER);
+            
 
             // Create text panel
             JPanel textPanel = new JPanel(new GridBagLayout());
@@ -209,16 +179,9 @@ public class HomePage extends JPanel {
             textPanel.add(categoryLabel.getComponent(), textGbc);
 
             textGbc.gridy = 1;
-            GenericComponents.QuizLabel descriptionLabel = new GenericComponents.QuizLabel(
-                description,
-                new Font("Helvetica", Font.PLAIN, 14),
-                new Color(240, 240, 240),
-                null, 5, true, false, true
-            );
-            textPanel.add(descriptionLabel.getComponent(), textGbc);
 
             // Add components to card
-            cardPanel.add(iconPanel, BorderLayout.NORTH);
+        
             cardPanel.add(textPanel, BorderLayout.CENTER);
 
             // Add hover effect with animation
@@ -361,9 +324,8 @@ public class HomePage extends JPanel {
 
     private void initializeQuestions() {
         questions = new ArrayList<>();
-        int questionsPerGame = Settings.getInstance().getQuestionsPerGame();
         
-        // General Knowledge Questions
+        // General Knowledge Questions with placeholders
         if (selectedCategory.equals("General")) {
             questions.add(new GenericComponents.QuizQuestion(
                 "What is the capital of France?",
@@ -475,12 +437,6 @@ public class HomePage extends JPanel {
                 "Antarctic"
             ));
         }
-
-        // Shuffle questions and limit to the selected number
-        java.util.Collections.shuffle(questions);
-        if (questions.size() > questionsPerGame) {
-            questions = questions.subList(0, questionsPerGame);
-        }
     }
 
     private void startGame() {
@@ -507,7 +463,7 @@ public class HomePage extends JPanel {
         gbc.weighty = 1.0;
         gbc.insets = new Insets(20, 20, 20, 20);
 
-        // Create question panel with maximum width and shadow
+        // Create question panel with maximum width
         JPanel questionPanel = new JPanel(new BorderLayout(10, 10));
         questionPanel.setOpaque(false);
         questionPanel.setPreferredSize(new Dimension(content.getWidth() - 100, content.getHeight() - 100));
@@ -534,8 +490,6 @@ public class HomePage extends JPanel {
         // Style question component for dark theme
         questionComponent.setBackground(GenericComponents.ThemeManager.isDarkMode() ? 
             new Color(45, 45, 45) : Color.WHITE);
-        
-        // Increase font size and set theme-aware colors for question and options
         for (Component comp : questionComponent.getComponents()) {
             if (comp instanceof JLabel) {
                 JLabel label = (JLabel) comp;
@@ -581,7 +535,7 @@ public class HomePage extends JPanel {
         buttonPanel.add(submitButton.getComponent());
         questionPanel.add(buttonPanel, BorderLayout.SOUTH);
 
-        // Add score display with theme-aware styling
+        // Add score display adapting to the theme
         GenericComponents.QuizLabel scoreLabel = new GenericComponents.QuizLabel(
             "Score: " + score,
             new Font("Helvetica", Font.BOLD, 20),

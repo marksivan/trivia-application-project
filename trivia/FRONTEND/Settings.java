@@ -1,26 +1,4 @@
-/**
- * Settings.java
- * 
- * This class implements a singleton pattern to manage application-wide settings and configurations.
- * It provides centralized access to all user preferences and game settings.
- * 
- * Key Features:
- * - Manages game settings (time limits, question counts, points)
- * - Handles UI preferences (theme, fonts, colors)
- * - Controls animation settings
- * - Manages sound settings
- * 
- * The class uses:
- * - Singleton pattern for global access
- * - Validation for setting values
- * - Default values for all settings
- * - Theme integration with ThemeManager
- * 
- * Usage:
- * Settings settings = Settings.getInstance();
- * settings.setQuestionTimeLimit(30);
- * boolean isDarkMode = settings.isDarkMode();
- */
+
 
 import DOM.GenericComponents;
 

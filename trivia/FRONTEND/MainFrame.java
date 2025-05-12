@@ -17,8 +17,6 @@ public class MainFrame extends JFrame {
         setMinimumSize(new Dimension(800, 600));
         setLocationRelativeTo(null);
         setResizable(true);
-
-        // Create main panel with CardLayout for smooth transitions
         mainPanel = new JPanel();
         cardLayout = new CardLayout();
         mainPanel.setLayout(cardLayout);
@@ -42,15 +40,11 @@ public class MainFrame extends JFrame {
                 showLoginPage();
             }
         });
-
-        // Add pages to main panel
         mainPanel.add(loginPage, "LOGIN");
         mainPanel.add(registerPage, "REGISTER");
 
         // Show login page initially
         showLoginPage();
-
-        // Add window listener to handle resizing
         addComponentListener(new ComponentAdapter() {
             @Override
             public void componentResized(ComponentEvent e) {
@@ -80,7 +74,7 @@ public class MainFrame extends JFrame {
             homePage = new HomePage();
             mainPanel.add(homePage, "HOME");
         } else {
-            homePage = new HomePage(); // Create new instance to reset state
+            homePage = new HomePage();
             mainPanel.remove(homePage);
             mainPanel.add(homePage, "HOME");
         }
@@ -92,7 +86,6 @@ public class MainFrame extends JFrame {
 
     public static void main(String[] args) {
         try {
-            // Set system look and feel
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception e) {
             e.printStackTrace();
