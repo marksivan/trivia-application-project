@@ -91,7 +91,7 @@ public class HomePage extends JPanel {
                 JOptionPane.YES_NO_OPTION
             );
             if (confirm == JOptionPane.YES_OPTION) {
-                resetGameState();
+                handleHomeButton();
             }
         } else {
             resetGameState();
@@ -263,7 +263,6 @@ public class HomePage extends JPanel {
         buttonPanel.add(createButton("Settings", e -> showSettings()).getComponent());
         
         buttonPanel.add(createButton("Logout", e -> AuthManager.getInstance().logout()).getComponent());
-        buttonPanel.add(createButton("Reset", e -> resetGame()).getComponent());
         return buttonPanel;
     }
 

@@ -5,7 +5,7 @@ import java.util.*;
 
 public class SimulateGame{
 
-	public ArrayList<Question> mediumQuestions;
+    public ArrayList<Question> mediumQuestions;
     public MaxHeap hardQuestions;
     public MinHeap easyQuestions;
 
@@ -66,7 +66,7 @@ public class SimulateGame{
 			}
 
              }
-			 
+	     Collections.shuffle(mediumQuestions);	 
 		
 
 	}  catch (FileNotFoundException e) {
@@ -78,7 +78,7 @@ public class SimulateGame{
         }
     }
 		public void playGame() {
-	    Collections.shuffle(mediumQuestions);
+	//     Collections.shuffle(mediumQuestions);
 	    Scanner scanner = new Scanner(System.in);
 
 	    try {

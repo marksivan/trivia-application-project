@@ -25,7 +25,7 @@ public class GameController {
         game = new SimulateGame();
         currentQuestionIndex = 0;
         score = 0;
-        totalQuestionsToAsk = 15;
+        totalQuestionsToAsk = Settings.getInstance().getQuestionsPerGame();
         currentQuestions = new ArrayList<>();
         wrongStreak = 0;
         correctStreak = 0;
@@ -50,9 +50,9 @@ public class GameController {
         totalPossibleScore = 0;
         currentQuestions.clear();
         // Pre-populate some questions from medium difficulty
+
        if (game.mediumQuestions != null && !game.mediumQuestions.isEmpty()) {
             currentQuestions.addAll(game.mediumQuestions);
-            // Collections.shuffle(currentQuestions);
         }
     }
 
@@ -74,7 +74,6 @@ public class GameController {
         } else if (!game.mediumQuestions.isEmpty()) {
             currentQuestion = game.mediumQuestions.remove(game.mediumQuestions.size() - 1);
         } else if (!currentQuestions.isEmpty()) {
-            // Fallback to pre-populated questions
             currentQuestion = currentQuestions.remove(currentQuestions.size() - 1);
         } else {
             return null; // No more questions available
@@ -180,7 +179,7 @@ public class GameController {
         if (totalPossibleScore == 0) {
             return 0;
         }
-        return (int) Math.round((double) score / totalPossibleScore * 100);
+        return (int) Math.round(((double) score * 100)/ totalPossibleScore);
     }
 
     /**

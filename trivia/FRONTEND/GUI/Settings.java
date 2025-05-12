@@ -11,7 +11,7 @@ public class Settings {
     
     // Game Settings
     private int questionTimeLimit = 10;
-    private int questionsPerGame = 10;
+    private int questionsPerGame = 15;
     private boolean autoSubmitOnTimeUp = true;
     
     // UI Settings
