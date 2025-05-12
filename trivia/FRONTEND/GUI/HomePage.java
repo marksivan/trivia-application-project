@@ -47,7 +47,7 @@ public class HomePage extends JPanel {
             GenericComponents.ThemeManager.getButton(),
             GenericComponents.ThemeManager.getButtonHover(),
             Color.WHITE,
-            new Font("Helvetica", Font.BOLD, 14),
+            new Font("Times New Roman", Font.BOLD, 14),
             8, 15, true, true,
             e -> handleBackButton()
         );
@@ -202,7 +202,16 @@ public class HomePage extends JPanel {
     }
 
     private JPanel createCategoryCard(String category) {
-        JPanel cardPanel = new JPanel(new BorderLayout(20, 20));
+        JPanel cardPanel = new JPanel(new BorderLayout(20, 20)) {
+            @Override
+            protected void paintComponent(Graphics g) {
+                Graphics2D g2 = (Graphics2D) g;
+                g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                g2.setColor(getBackground());
+                g2.fillRoundRect(0, 0, getWidth(), getHeight(), 10, 10);
+                super.paintComponent(g);
+            }
+        };
         cardPanel.setBackground(GenericComponents.ThemeManager.getButton());
         cardPanel.setCursor(new Cursor(Cursor.HAND_CURSOR));
         cardPanel.setPreferredSize(new Dimension(300, 200));
