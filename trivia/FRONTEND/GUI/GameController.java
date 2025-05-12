@@ -52,7 +52,7 @@ public class GameController {
         // Pre-populate some questions from medium difficulty
        if (game.mediumQuestions != null && !game.mediumQuestions.isEmpty()) {
             currentQuestions.addAll(game.mediumQuestions);
-            Collections.shuffle(currentQuestions);
+            // Collections.shuffle(currentQuestions);
         }
     }
 
