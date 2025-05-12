@@ -1,0 +1,76 @@
+Question,Option A,Option B,Option C,Option D,Correct Answer Index,Difficulty Level
+"What does HTTP stand for?",HyperText Transport Protocol,HyperText Transfer Protocol,HyperType Transfer Protocol,Hyper Transfer Text Protocol,1,7
+"What is the main function of a motherboard?",Provide power to the computer,House the CPU,Store data,Provide input/output ports,1,8
+"Which programming language is primarily used for web development?",Python,JavaScript,Java,Swift,1,9
+"What is the full form of the abbreviation 'URL'?",Uniform Resource Locator,Uniform Resource Language,Universal Resource Locator,Universal Resource Language,1,8
+"In what year was the first iPhone released?",2007,2006,2005,2008,0,9
+"What is the process of converting human-readable data into machine code called?",Encoding,Decoding,Compression,Encryption,0,10
+"What is the core function of an operating system?",Manage hardware and software resources,Process data,Encrypt information,Develop applications,0,10
+"Which company developed the Android operating system?",Google,Microsoft,Apple,IBM,0,10
+"What does CPU stand for?",Central Processing Unit,Central Program Unit,Central Programming Unit,Centralized Processing Unit,0,9
+"Which of these is an example of a database management system?",MySQL,WordPress,Windows,Excel,0,10
+"Which programming language is known for its simplicity and readability?",Python,Java,C++,Ruby,0,10
+"What is a 'bug' in computer programming?",An error in the code,An additional feature,The user interface,A hardware component,0,10
+"Which of the following is an example of a cloud storage service?",Google Drive,Adobe Photoshop,Microsoft Word,Windows,0,10
+"What does the acronym 'DNS' stand for?",Domain Name System,Domain Network System,Digital Name System,Direct Network Service,0,10
+"What programming language is primarily used for iOS app development?",Objective-C,Swift,C++,Java,1,9
+"Which technology is primarily used for virtual reality?",AR,VR,AI,Machine Learning,1,10
+"Which of these devices is an example of a wearable technology?",Smartwatch,Smartphone,Laptop,Tablet,0,10
+"Which file extension is commonly used for images?",.jpg,.exe,.mp4,.doc,0,10
+"Which technology allows the use of voice assistants?",Natural Language Processing,Augmented Reality,Artificial Intelligence,Virtual Reality,2,10
+"What does the term 'IoT' stand for?",Internet of Things,Internet of Time,Interface of Technology,Intranet of Things,0,10
+"What is the function of a router in a network?",Transmit data between devices,Store data,Provide power,Encrypt communication,0,10
+"Which programming language is known as the language of the web?",HTML,C++,JavaScript,Swift,2,10
+"Which technology is primarily used for self-driving cars?",Machine Learning,Virtual Reality,Quantum Computing,Augmented Reality,0,10
+"What does 'UI' stand for in the context of software development?",User Interface,Unified Interface,User Intelligence,Unified Information,0,10
+"What is blockchain primarily used for?",Cryptocurrency,Web development,Machine learning,Data storage,0,10
+"Which of the following is a popular cloud computing platform?",AWS,GitHub,Google Chrome,Facebook,0,10
+"Which technology is at the heart of 3D printing?",Additive Manufacturing,Subtractive Manufacturing,3D Modeling,Virtual Reality,0,10
+"What is the name of the company that developed Windows?",Apple,Microsoft,Google,IBM,1,10
+"Which type of machine learning involves teaching a model by showing it labeled examples?",Supervised Learning,Unsupervised Learning,Reinforcement Learning,Deep Learning,0,10
+"Which of these is used to store data in a computer?",RAM,CPU,Hard Drive,Monitor,2,10
+"What does 'GPU' stand for?",Graphics Processing Unit,General Processing Unit,Global Processing Unit,Graphical Program Unit,0,10
+"Which programming language is known for its use in scientific computing?",R,Java,Python,C++,0,10
+"What is the main function of a web browser?",Access websites,Encrypt data,Store files,Create websites,0,10
+"What is the function of the 'kernel' in an operating system?",Manage hardware,Run applications,Encrypt data,Store files,0,10
+"Which of these is an open-source operating system?",Linux,Windows,macOS,Android,0,10
+"Which device is commonly used to store and read digital media?",Flash Drive,Monitor,Speaker,Router,0,10
+"What does 'HTTP' stand for?",HyperText Transfer Protocol,High Transfer Protocol,HyperText Transport Protocol,High Transfer Text Protocol,1,10
+"Which term describes the process of transforming data into an unreadable format?",Encryption,Decryption,Encoding,Transmission,0,10
+"Which company developed the first personal computer?",Apple,Microsoft,IBM,Atari,2,10
+"Which programming language is primarily used for web backend development?",PHP,Swift,Python,JavaScript,0,10
+"What is the function of an antivirus program?",Protect from malware,Speed up the computer,Manage files,Encrypt data,0,10
+"Which of these is an example of a search engine?",Google,Bing,Yahoo,All of the above,3,10
+"Which is the primary function of a database?",Store and organize data,Encrypt data,Filter data,Display data,0,10
+"Which term refers to an online platform for coding competitions?",LeetCode,GitHub,Stack Overflow,Reddit,0,10
+"Which technology is used in the development of chatbots?",Natural Language Processing,Quantum Computing,Blockchain,Virtual Reality,0,10
+"Which type of data is typically stored in a database?",Structured Data,Unstructured Data,Multimedia Data,All of the above,0,10
+"Which programming language was designed by Google?",Go,Swift,Python,Java,0,10
+"Which company created the smartphone known as the 'Galaxy'?",Apple,Google,Samsung,LG,2,10
+"Which component of a computer is responsible for executing instructions?",CPU,RAM,Hard Drive,Graphics Card,0,10
+"Which programming language is widely used for mobile app development?",Java,Swift,C++,JavaScript,0,10
+"Which technology is commonly used for the development of artificial intelligence?",Machine Learning,Augmented Reality,Cloud Computing,Quantum Computing,0,10
+"Which type of software is Adobe Photoshop?",Graphics Design Software,Web Development Software,Operating System,Office Software,0,10
+"What is a primary purpose of a Content Management System (CMS)?",Manage website content,Encrypt user data,Store large files,Develop programming code,0,10
+"What does the acronym 'HTML' stand for?",HyperText Markup Language,High Tech Media Language,Hyperlink Text Markup Language,Hyperlink Technology Markup Language,0,10
+"Which of the following is a machine learning algorithm?",K-means,MDX,SQL,Python,0,10
+"Which is used to protect personal information on a website?",SSL Certificate,JavaScript,Cloud Computing,Firewall,0,10
+"Which company is known for creating the iPhone?",Samsung,Google,Apple,Microsoft,2,10
+"Which technology is commonly used for augmented reality?",Google Cardboard,Smartphone Cameras,QR Codes,Smartwatches,1,10
+"Which type of programming is used in web development?",Frontend Development,Backend Development,Full Stack Development,All of the above,3,10
+"Which of the following technologies is used in facial recognition?",AI,Machine Learning,Neural Networks,All of the above,3,11
+"Which type of neural network is used for image recognition?",Convolutional Neural Network,Recurrent Neural Network,Generative Adversarial Network,Radial Basis Function Network,0,11
+"What is the main advantage of cloud computing?",Scalability,Security,Speed,Cost,0,11
+"Which of the following is a feature of quantum computing?",Superposition,Encryption,Compression,Virtualization,0,11
+"What is the purpose of a compiler in programming?",Convert code to machine-readable form,Encrypt data,Compile code into an executable,Store data,0,11
+"Which language is commonly used for server-side scripting?",PHP,JavaScript,HTML,CSS,0,11
+"Which technology is most closely associated with the concept of 'big data'?",Machine Learning,Cloud Computing,Blockchain,Artificial Intelligence,1,11
+"Which of these is an example of an autonomous robot?",Roomba,Self-driving car,Drone,All of the above,3,11
+"Which platform is most widely used for open-source software development?",GitHub,GitLab,SourceForge,Bitbucket,0,11
+"Which technology uses smart sensors and networks to connect physical devices?",Internet of Things,Machine Learning,Cloud Computing,Artificial Intelligence,0,11
+"Which of the following programming languages is used in Android app development?",Kotlin,Swift,Java,C#,0,11
+"Which of these is an example of a digital assistant?",Siri,Alexa,Google Assistant,All of the above,3,12
+"Which of the following is associated with self-learning systems?",Artificial Intelligence,Blockchain,Cloud Computing,Quantum Computing,0,12
+"Which programming language is known for its use in data analysis?",Python,R,Java,Swift,0,12
+"Which of these technologies is used to store and manage large amounts of data?",Big Data,Cloud Computing,Blockchain,All of the above,3,12
+"Which of these programming paradigms is based on the concept of 'objects'?",Object-Oriented Programming,Functional Programming,Procedural Programming,Declarative Programming,0,12

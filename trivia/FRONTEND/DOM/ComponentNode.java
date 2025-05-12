@@ -107,7 +107,7 @@ public class ComponentNode {
 
     public void addMouseBehavior(MouseListener listener) {
         component.addMouseListener(listener);
-        behaviors.add(e -> {}); // Placeholder for mouse behaviors
+        behaviors.add(e -> {});
     }
 
     public void addChild(ComponentNode child) {
