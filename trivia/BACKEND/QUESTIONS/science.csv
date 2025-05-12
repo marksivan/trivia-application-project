@@ -29,22 +29,51 @@ Question,Option A,Option B,Option C,Option D,Correct Answer Index,Difficulty Lev
 "What element is commonly used in X-ray technology?",Carbon,Gold,Lead,Tungsten,3,10
 "What is the name of the biological process used to convert light into chemical energy?",Respiration,Photosynthesis,Oxidation,Reduction,1,10
 "What is the Heisenberg Uncertainty Principle?",It is impossible to simultaneously know the position and velocity of a particle,Energy cannot be created or destroyed,Light behaves as both a particle and a wave,The universe is made of atoms,0,11
-"What does the term ""black hole"" refer to?",A collapsed star with intense gravity,A dark region in space that absorbs light,An object that warps space-time,All of the above,3,12
+"What does the term 'black hole' refer to?",A collapsed star with intense gravity,A dark region in space that absorbs light,An object that warps space-time,All of the above,3,12
 "What process is responsible for the formation of stars?",Fusion,Supernova,Condensation,Accretion,0,13
-"What type of reaction occurs when an atom's nucleus is split?",Fission,Fusion,Radioactive decay,Alpha decay,0,14
-"Which particle is responsible for the strong nuclear force?",Photon,Neutron,Quark,Gluon,3,15
+"What type of reaction occurs when an atom's nucleus is split?",Fission,Fusion,Radioactive decay,Alpha decay,0,10
+"Which particle is responsible for the strong nuclear force?",Photon,Neutron,Quark,Gluon,3,10
 "What is the main component of the Sun?",Hydrogen,Helium,Carbon,Iron,0,15
 "What is the name of the region around a black hole where nothing can escape?",Event Horizon,Photon Sphere,Accretion Disk,Singularity,0,15
 "What is the principle of conservation of mass?",Matter cannot be created or destroyed,Energy cannot be created or destroyed,Mass is relative to the speed of light,Energy and matter are interchangeable,0,15
-"What is the equation that defines Einstein’s theory of relativity?",E = mc²,PV = nRT,F = ma,V = IR,0,15
-"What is the primary reason for the greenhouse effect?",Deforestation,Carbon dioxide emission,Volcanic activity,Water vapor,1,15
-"What is the particle responsible for the weak nuclear force?",Photon,Electron,Z boson,Neutron,2,15
-"What element was used in the first atomic bomb?",Uranium,Plutonium,Thorium,Radon,0,15
-"What is the formula for the efficiency of a heat engine?",Efficiency = (Work output)/(Heat input),Efficiency = (Heat input)/(Work output),Efficiency = (Energy output)/(Energy input),Efficiency = (Energy input)/(Energy output),0,15
-"What phenomenon causes the Northern Lights?",Refraction,Polarization,Magnetic field interference,Electromagnetic radiation,2,15
-"What is the name of the largest moon of Jupiter?",Io,Europa,Callisto,Ganymede,3,15
-"What is the term for the process by which a substance changes directly from a gas to a solid?",Sublimation,Deposition,Evaporation,Condensation,1,15
-"What is the name of the particle accelerator located in Switzerland?",Large Hadron Collider,Superconducting Super Collider,Fermilab,Tevatron,0,15
-"What is the most abundant element in the Earth’s crust?",Silicon,Aluminum,Oxygen,Iron,2,15
-"What is the energy source of the Sun?",Fusion of hydrogen into helium,Fission of hydrogen into helium,Nuclear decay,Gravitational contraction,0,15
-"What was the first element to be synthesized in a laboratory?",Technetium,Plutonium,Radium,Francium,0,15
+"What is the equation that defines Einstein’s theory of relativity?",E = mc²,PV = nRT,F = ma,V = IR,0,2
+"What principle implies measurement disturbs a quantum system",Heisenberg Uncertainty Principle,Pauli Exclusion Principle,Superposition Principle,Complementarity Principle,0,10
+"What tensor describes the curvature of spacetime",Einstein Tensor,Riemann Curvature Tensor,Metric Tensor,Stress Energy Tensor,1,10
+"What law states energy cannot be created or destroyed",First Law of Thermodynamics,Second Law of Thermodynamics,Conservation of Momentum,Conservation of Charge,0,10
+"What principle explains light behaving as particle and wave",Complementarity Principle,Photoelectric Principle,Heisenberg Principle,Pauli Principle,0,10
+"What effect causes spectral lines to shift due to motion",Doppler Effect,Zeeman Effect,Stark Effect,Compton Effect,0,10
+"What process in stars transports energy by bulk fluid motion",Convection,Radiation,Conduction,Advection,0,10
+"What cycle describes nitrogen conversion in ecosystems",Nitrogen Cycle,Water Cycle,Carbon Cycle,Phosphorus Cycle,0,10
+"What law relates gas pressure and volume at constant temperature",Boyle Law,Charles Law,Avogadro Law,Ideal Gas Law,0,10
+"What conjecture posits singularities are hidden from observers",Cosmic Censorship,No Hair Theorem,Equivalence Principle,Pauli Exclusion,0,10
+"What principle states probabilities derive from wave functions",Born Rule,Pauli Exclusion Principle,Correspondence Principle,Uncertainty Principle,0,10
+"What limit sets maximum speed for information transfer",Speed of Light Limit,Chandrasekhar Limit,Heisenberg Limit,Planck Limit,0,10
+"What equation relates mass and energy",Mass Energy Equivalence,Navier Stokes Equation,Schroedinger Equation,Maxwell Equation,0,10
+"What phenomenon allows electrons to tunnel through barriers",Quantum Tunneling,Photoelectric Effect,Compton Scattering,Blackbody Radiation,0,10
+"What principle orders electrons in atomic shells",Aufbau Principle,Hunds Rule,Pauli Exclusion Principle,Periodic Law,0,1
+"What interaction is mediated by gluons",Strong Nuclear Force,Weak Nuclear Force,Electromagnetic Force,Gravitational Force,0,10
+"What effect explains emission of electrons from metals by light",Photoelectric Effect,Compton Effect,Hall Effect,Cherenkov Effect,0,10
+"What law describes entropy increase in isolated systems",Second Law of Thermodynamics,First Law of Thermodynamics,Third Law of Thermodynamics,Zeroth Law of Thermodynamics,0,10
+"What measurement principle limits simultaneous position and momentum knowledge",Uncertainty Principle,Correspondence Principle,Quantum Number Principle,Pauli Exclusion,0,10
+"What force binds protons and neutrons in nucleus",Strong Nuclear Force,Weak Nuclear Force,Gravitational Force,Electromagnetic Force,0,10
+"What concept describes particles with half integer spin",Fermions,Bosons,Leptons,Hadrons,0,10
+"What process converts pyruvate to acetyl CoA",Glycolysis,Citric Acid Cycle,Pyruvate Oxidation,Fermentation,2,10
+"What law relates current voltage and resistance",Ohms Law,Kirchhoffs Law,Faradays Law,Joules Law,0,10
+"What type of bond forms between water molecules",Ionic,Covalent,Hydrogen,Metallic,2,10
+"What organelle produces ATP in eukaryotic cells",Ribosome,Chloroplast,Mitochondrion,Nucleus,2,10
+"What property describes a substance that does not conduct electricity",Insulator,Conductor,Semiconductor,Electrolyte,0,10
+"What is the pH of a neutral solution at 25C",0,7,14,1,1,10
+"What is the term for oxidation without oxygen",Anaerobic,Aerobic,Hypoxic,Oxidative,0,10
+"What particle mediates the weak nuclear force",Photon,Gluon,Z Boson,Electron,2,10
+"What is the principle that energy is quantized",Plancks Principle,Pauli Principle,Heisenberg Principle,Born Principle,0,10
+"What is the effect of catalyst on activation energy",Increases,Decreases,No Change,Reverses,1,10
+"What field studies classification of organisms",Genetics,Anatomy,Taxonomy,Physiology,2,10
+"What gas law describes volume and temperature relation",Boyles Law,Charles Law,Avogadros Law,Daltons Law,1,10
+"What is the basic unit of heredity",Chromosome,Gene,Allele,DNA,1,10
+"What is the cell cycle phase for DNA replication",G1,S,G2,M,1,10
+"What is the minimum energy to remove an electron",Ionization Energy,Activation Energy,Binding Energy,Work Function,0,10
+"What process forms glucose in plants",Respiration,Transpiration,Photosynthesis,Digestion,2,8
+"What describes curved space around mass",Gravity Field,Electric Field,Magnetic Field,Gravitational Field,3,10
+"What type of reaction absorbs heat",Exothermic,Endothermic,Isothermal,Adiabatic,1,10
+"What is the SI base unit for amount of substance",Mole,Gram,Liter,Molecule,0,10
+"What phenomenon splits white light into spectrum",Reflection,Refraction,Diffraction,Dispersion,3,10

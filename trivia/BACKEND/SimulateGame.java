@@ -47,10 +47,10 @@ public class SimulateGame{
 			String[] questionDetails =  scanner.nextLine().trim().split(",");
 			String questionText = questionDetails[0].substring(1, questionDetails[0].length() - 1);;
 			String[] options = new String[4];
-			options[0] = questionDetails[1];
-			options[1] = questionDetails[2];
-			options[2] = questionDetails[3];
-			options[3] = questionDetails[4];
+			options[0] = questionDetails[1].replaceAll("^\"|\"$", "");
+			options[1] = questionDetails[2].replaceAll("^\"|\"$", "");
+			options[2] = questionDetails[3].replaceAll("^\"|\"$", "");
+			options[3] = questionDetails[4].replaceAll("^\"|\"$", "");
 			int correctAnswerIndex = Integer.parseInt(questionDetails[5].trim());
             int difficultyLevel = Integer.parseInt(questionDetails[6].trim());
 
@@ -87,7 +87,7 @@ public class SimulateGame{
 	        // Decide where to pull the question from
 	        if (wrongStreak >= 3 && !easyQuestions.isEmpty()) {
 	            q = easyQuestions.pop(); // from MinHeap
-	            wrongStreak = 0; // reset after fallback
+	            // wrongStreak = 0; // reset after fallback
 	        } else if (correctStreak >= 3 && !hardQuestions.isEmpty()) {
 	            q = hardQuestions.pop(); // from MaxHeap
 	            correctStreak = 0; // reset after jump
@@ -97,14 +97,17 @@ public class SimulateGame{
 	            System.out.println("No more questions available.");
 	            break;
 	        }
-
+            int questionScore;
 	        String difficulty = "";
 	        if(q.getDifficultyLevel() == 10){
 	        	difficulty = " (Medium)";
+	        	questionScore = 10;
 	        }else if (q.getDifficultyLevel()<10){
 	        	difficulty = " (Easy)";
+	        	questionScore = 5;
 	        }else{
 	        	difficulty = " (Hard)";
+	        	questionScore = 20;
 	        }
 
 	        // Ask the question
@@ -135,8 +138,8 @@ public class SimulateGame{
 
 	        // Evaluate answer
 	        if (userAnswerIndex == q.getCorrectAnswerIndex()) {
-	            System.out.println("Correct! +10 points.");
-	            points += 10;
+	            System.out.println("Correct! " + questionScore +" points.");
+	            points += questionScore;
 	            correctStreak++;
 	            wrongStreak = 0;
 	        } else {
@@ -157,7 +160,7 @@ public class SimulateGame{
     	Scanner scanner = new Scanner(System.in);
 
     	System.out.println("Choose a subject: ");
-        System.out.println("1. Math\n2. Science\n3. Verbal Reasoning\n4. Technology\n5. Sports\n6. History\n7. Geography\n8. Health and Medicine");
+        System.out.println("1. Math\n2. Science\n3. Verbal Reasoning\n4. Technology\n5. Sports\n6. World History\n7. Geography\n8. Health and Medicine");
         System.out.println("------------------------");
         SimulateGame game = new SimulateGame();
 
