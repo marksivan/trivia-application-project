@@ -1,4 +1,5 @@
 package DOM;
+
 import javax.swing.*;
 import javax.swing.event.DocumentListener;
 import javax.swing.event.DocumentEvent;
@@ -8,6 +9,8 @@ import java.util.function.Consumer;
 import java.util.HashMap;
 import java.util.Map;
 import java.awt.font.TextAttribute;
+import GUI.Settings;
+
 
 
 public class GenericComponents {
@@ -237,11 +240,12 @@ public class GenericComponents {
 
 
     public static class QuizCircularClock extends JPanel {
-        private int secondsRemaining = 30;
+        private int secondsRemaining;
         private Timer countdownTimer;
         private Consumer<Void> onTimeUp;
 
         public QuizCircularClock() {
+            secondsRemaining = Settings.getInstance().getQuestionTimeLimit();
             setPreferredSize(new Dimension(80, 80));
             setOpaque(false);
 
@@ -270,7 +274,7 @@ public class GenericComponents {
         }
 
         public void reset() {
-            secondsRemaining = 30;
+            secondsRemaining = Settings.getInstance().getQuestionTimeLimit();
             countdownTimer.stop();
         }
 
@@ -295,11 +299,11 @@ public class GenericComponents {
             g2.fillOval(x, y, diameter, diameter);
 
             // Time color - use theme colors
-            if (secondsRemaining > 20) g2.setColor(ThemeManager.getSuccess());      // Green
-            else if (secondsRemaining > 10) g2.setColor(ThemeManager.getButton());  // Theme button color
+            if (secondsRemaining > Settings.getInstance().getQuestionTimeLimit() / 2) g2.setColor(ThemeManager.getSuccess());      // Green
+            else if (secondsRemaining > Settings.getInstance().getQuestionTimeLimit() / 4) g2.setColor(ThemeManager.getButton());  // Theme button color
             else g2.setColor(ThemeManager.getButtonHover());                        // Theme hover color
 
-            float angle = 360f * secondsRemaining / 30f;
+            float angle = 360f * secondsRemaining / Settings.getInstance().getQuestionTimeLimit();
             g2.fillArc(x, y, diameter, diameter, 90, -(int) angle);
 
             // Inner circle - use theme background
@@ -310,7 +314,7 @@ public class GenericComponents {
 
             // Text - use theme text color
             g2.setColor(ThemeManager.getText());
-            g2.setFont(new Font("Helvetica", Font.BOLD, 14));
+            g2.setFont(new Font("Times New Roman", Font.BOLD, 14));
             String timeStr = secondsRemaining + "s";
             FontMetrics fm = g2.getFontMetrics();
             int strWidth = fm.stringWidth(timeStr);

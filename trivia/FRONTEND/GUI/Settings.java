@@ -1,3 +1,4 @@
+package GUI;
 
 
 import DOM.GenericComponents;
