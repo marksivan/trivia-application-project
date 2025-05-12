@@ -84,6 +84,7 @@ public class AuthManager {
 
     public void logout() {
         currentUser = null;
+        saveUsers();
     }
 
     public boolean isLoggedIn() {

@@ -96,4 +96,9 @@ public class MainFrame extends JFrame {
             frame.setVisible(true);
         });
     }
+
+    public static Object getInstance() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getInstance'");
+    }
 } 

@@ -142,7 +142,7 @@ public class HomePage extends JPanel {
         JPanel cardsGridPanel = new JPanel(new GridLayout(0, 2, 30, 30));
         cardsGridPanel.setOpaque(false);
 
-        String[] categories = {"General", "Science", "History", "Geography", "Technology", "Sports", "Health and Medicine", "Verbal Reasoning"};
+        String[] categories = {"Math", "Science", "Verbal Reasoning", "Technology", "Sports", "World History", "Geography", "Health and Medicine"};
         for (String category : categories) {
             cardsGridPanel.add(createCategoryCard(category));
         }
@@ -203,9 +203,8 @@ public class HomePage extends JPanel {
     private JPanel createCategoryCard(String category) {
         JPanel cardPanel = new JPanel(new BorderLayout(20, 20));
         cardPanel.setBackground(GenericComponents.ThemeManager.getButton());
-        cardPanel.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
         cardPanel.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        cardPanel.setPreferredSize(new Dimension(350, 250));
+        cardPanel.setPreferredSize(new Dimension(300, 200));
         JPanel textPanel = createTextPanel(category);
 
         cardPanel.add(textPanel, BorderLayout.CENTER);
@@ -231,7 +230,7 @@ public class HomePage extends JPanel {
 
         GenericComponents.QuizLabel categoryLabel = new GenericComponents.QuizLabel(
             category,
-            new Font("Helvetica", Font.BOLD, 24),
+            new Font("Times New Roman", Font.BOLD, 24),
             Color.WHITE,
             null, 15, true, false, true
         );
@@ -239,7 +238,7 @@ public class HomePage extends JPanel {
 
         textGbc.gridy = 1;
         JLabel descriptionLabel = new JLabel("Click to start");
-        descriptionLabel.setFont(new Font("Helvetica", Font.PLAIN, 16));
+        descriptionLabel.setFont(new Font("Times New Roman", Font.PLAIN, 16));
         descriptionLabel.setForeground(new Color(240, 240, 240));
         descriptionLabel.setHorizontalAlignment(SwingConstants.CENTER);
         textPanel.add(descriptionLabel, textGbc);
@@ -252,6 +251,7 @@ public class HomePage extends JPanel {
         buttonPanel.setOpaque(false);
         buttonPanel.add(createButton("Start Game", e -> startGame()).getComponent());
         buttonPanel.add(createButton("Settings", e -> showSettings()).getComponent());
+        
         buttonPanel.add(createButton("Logout", e -> AuthManager.getInstance().logout()).getComponent());
         buttonPanel.add(createButton("Reset", e -> resetGame()).getComponent());
         return buttonPanel;
@@ -289,6 +289,7 @@ public class HomePage extends JPanel {
 
     private void startGame() {
         
+        
         int categoryChoice = 0;
         switch(selectedCategory) {
             case "Math":
@@ -297,26 +298,23 @@ public class HomePage extends JPanel {
             case "Science":
                 categoryChoice = 2;
                 break;
-            case "Verbal Reasoning":
+            case "Verbal Reasoning": 
                 categoryChoice = 3;
                 break;
             case "Technology":
                 categoryChoice = 4;
-                break;
+                break;      
             case "Sports":
                 categoryChoice = 5;
                 break;
-            case "History":
+            case "World History":
                 categoryChoice = 6;
                 break;
             case "Geography":
                 categoryChoice = 7;
                 break;
-            case "Health & Medicine":
+            case "Health and Medicine":
                 categoryChoice = 8;
-                break;
-            default:
-                categoryChoice = 1; // Default to Math if no category selected
                 break;
         }
         
