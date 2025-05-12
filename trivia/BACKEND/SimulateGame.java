@@ -19,21 +19,37 @@ public class SimulateGame{
 	public void ingestQuestions(int choice){
 		String filePath = "";
 		if(choice == 1){
-			filePath = "trivia/BACKEND/QUESTIONS/math.csv";
+			// filePath = "trivia/BACKEND/QUESTIONS/math.csv";
+			 filePath = "C:\\Users\\markt\\cs136\\trivia-application-project\\trivia\\BACKEND\\QUESTIONS\\math.csv";
+
 		}else if (choice == 2){
-			filePath = "trivia/BACKEND/QUESTIONS/science.csv";
+			// filePath = "trivia/BACKEND/QUESTIONS/science.csv";
+			    filePath = "C:\\Users\\markt\\cs136\\trivia-application-project\\trivia\\BACKEND\\QUESTIONS\\science.csv";
+
 		}else if (choice == 3){
-			filePath = "trivia/BACKEND/QUESTIONS/verbalReasoning.csv";
+			//filePath = "trivia/BACKEND/QUESTIONS/verbalReasoning.csv";
+			filePath = "C:\\Users\\markt\\cs136\\trivia-application-project\\trivia\\BACKEND\\QUESTIONS\\verbalReasoning.csv";
+
 		}else if (choice == 4){
-			filePath = "trivia/BACKEND/QUESTIONS/technology.csv";
+			//filePath = "trivia/BACKEND/QUESTIONS/technology.csv";
+			filePath = "C:\\Users\\markt\\cs136\\trivia-application-project\\trivia\\BACKEND\\QUESTIONS\\technology.csv";
+
 		}else if (choice == 5){
-			filePath = "trivia/BACKEND/QUESTIONS/sports.csv";
+			//filePath = "trivia/BACKEND/QUESTIONS/sports.csv";
+			filePath = "C:\\Users\\markt\\cs136\\trivia-application-project\\trivia\\BACKEND\\QUESTIONS\\sports.csv";
+
 		}else if (choice == 6){
-			filePath = "trivia/BACKEND/QUESTIONS/history.csv";
+			//filePath = "trivia/BACKEND/QUESTIONS/history.csv";
+			filePath = "C:\\Users\\markt\\cs136\\trivia-application-project\\trivia\\BACKEND\\QUESTIONS\\history.csv";
+
 		}else if (choice == 7){
-			filePath = "trivia/BACKEND/QUESTIONS/geography.csv";
+			//filePath = "trivia/BACKEND/QUESTIONS/geography.csv";
+			filePath = "C:\\Users\\markt\\cs136\\trivia-application-project\\trivia\\BACKEND\\QUESTIONS\\geography.csv";
+
 		}else if (choice == 8){
-			filePath = "trivia/BACKEND/QUESTIONS/healthAndMedicine.csv";
+			//filePath = "trivia/BACKEND/QUESTIONS/healthAndMedicine.csv";
+			filePath = "C:\\Users\\markt\\cs136\\trivia-application-project\\trivia\\BACKEND\\QUESTIONS\\healthAndMedicine.csv";
+
 		}
 
 		Scanner scanner = null;
