@@ -1,4 +1,4 @@
-package trivia.FRONTEND.DOM;
+package DOM;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;

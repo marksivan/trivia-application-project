@@ -2,15 +2,12 @@ package trivia.BACKEND;
 
 import java.util.Comparator;
 
- 
-
-public interface PriorityQueue<Question>{
+public interface PriorityQueue<T>{
 	public abstract boolean isEmpty();
 
 	public abstract int size();
 
-	public abstract void push(Question question, Comparator<Question> comparator);
+	public abstract void push(T question, Comparator<T> comparator);
 
-	public abstract Question pop();
-
+	public abstract T pop();
 }

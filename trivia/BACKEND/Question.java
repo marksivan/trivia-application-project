@@ -1,8 +1,5 @@
 package trivia.BACKEND;
 
-import java.io.*;
-import java.util.*;
-
 public class Question{
 	private String questionText;
 	private String[] answerOptions;

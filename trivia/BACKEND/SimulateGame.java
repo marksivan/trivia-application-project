@@ -36,9 +36,10 @@ public class SimulateGame{
 			filePath = "trivia/BACKEND/QUESTIONS/healthAndMedicine.csv";
 		}
 
+		Scanner scanner = null;
 		try{
 		File file = new File(filePath);
-		Scanner scanner = new Scanner(file);
+		scanner = new Scanner(file);
 
 		
         scanner.nextLine();  // skip the header
@@ -70,103 +71,114 @@ public class SimulateGame{
 
 	}  catch (FileNotFoundException e) {
             System.err.println("File not found: " + e.getMessage());
+        } finally {
+            if (scanner != null) {
+                scanner.close();
+            }
         }
     }
 		public void playGame() {
 	    Collections.shuffle(mediumQuestions);
 	    Scanner scanner = new Scanner(System.in);
 
-	    int questionsAnswered = 0;
-	    int points = 0;
-	    int wrongStreak = 0;
-	    int correctStreak = 0;
+	    try {
+		    int questionsAnswered = 0;
+		    int points = 0;
+		    int wrongStreak = 0;
+		    int correctStreak = 0;
 
-	    while (questionsAnswered < 15) {
-	        Question q;
+		    while (questionsAnswered < 15) {
+		        Question q;
 
-	        // Decide where to pull the question from
-	        if (wrongStreak >= 3 && !easyQuestions.isEmpty()) {
-	            q = easyQuestions.pop(); // from MinHeap
-	            // wrongStreak = 0; // reset after fallback
-	        } else if (correctStreak >= 3 && !hardQuestions.isEmpty()) {
-	            q = hardQuestions.pop(); // from MaxHeap
-	            correctStreak = 0; // reset after jump
-	        } else if (!mediumQuestions.isEmpty()) {
-	            q = mediumQuestions.remove(mediumQuestions.size() - 1); // O(1)
-	        } else {
-	            System.out.println("No more questions available.");
-	            break;
-	        }
-            int questionScore;
-	        String difficulty = "";
-	        if(q.getDifficultyLevel() == 10){
-	        	difficulty = " (Medium)";
-	        	questionScore = 10;
-	        }else if (q.getDifficultyLevel()<10){
-	        	difficulty = " (Easy)";
-	        	questionScore = 5;
-	        }else{
-	        	difficulty = " (Hard)";
-	        	questionScore = 20;
-	        }
+		        // Decide where to pull the question from
+		        if (wrongStreak >= 3 && !easyQuestions.isEmpty()) {
+		            q = easyQuestions.pop(); // from MinHeap
+		            // wrongStreak = 0; // reset after fallback
+		        } else if (correctStreak >= 3 && !hardQuestions.isEmpty()) {
+		            q = hardQuestions.pop(); // from MaxHeap
+		            correctStreak = 0; // reset after jump
+		        } else if (!mediumQuestions.isEmpty()) {
+		            q = mediumQuestions.remove(mediumQuestions.size() - 1); // O(1)
+		        } else {
+		            System.out.println("No more questions available.");
+		            break;
+		        }
+	            int questionScore;
+		        String difficulty = "";
+		        if(q.getDifficultyLevel() == 10){
+		        	difficulty = " (Medium)";
+		        	questionScore = 10;
+		        }else if (q.getDifficultyLevel()<10){
+		        	difficulty = " (Easy)";
+		        	questionScore = 5;
+		        }else{
+		        	difficulty = " (Hard)";
+		        	questionScore = 20;
+		        }
 
-	        // Ask the question
-	        System.out.println("\nQuestion " + (questionsAnswered + 1) + difficulty + ":");
-	        System.out.println(q.getQuestionText());
-	        String[] options = q.getAnswerOptions();
-	        System.out.println("A. " + options[0]);
-	        System.out.println("B. " + options[1]);
-	        System.out.println("C. " + options[2]);
-	        System.out.println("D. " + options[3]);
+		        // Ask the question
+		        System.out.println("\nQuestion " + (questionsAnswered + 1) + difficulty + ":");
+		        System.out.println(q.getQuestionText());
+		        String[] options = q.getAnswerOptions();
+		        System.out.println("A. " + options[0]);
+		        System.out.println("B. " + options[1]);
+		        System.out.println("C. " + options[2]);
+		        System.out.println("D. " + options[3]);
 
-	        // Get user input with validation
-	        int userAnswerIndex = -1;
-	        while (true) {
-	            System.out.print("Enter your answer (A-D): ");
-	            String userInput = scanner.nextLine().trim().toUpperCase();
-	            switch (userInput) {
-	                case "A": userAnswerIndex = 0; break;
-	                case "B": userAnswerIndex = 1; break;
-	                case "C": userAnswerIndex = 2; break;
-	                case "D": userAnswerIndex = 3; break;
-	                default:
-	                    System.out.println("Invalid input. Please enter A, B, C, or D.");
-	                    continue;
-	            }
-	            break;
-	        }
+		        // Get user input with validation
+		        int userAnswerIndex = -1;
+		        while (true) {
+		            System.out.print("Enter your answer (A-D): ");
+		            String userInput = scanner.nextLine().trim().toUpperCase();
+		            switch (userInput) {
+		                case "A": userAnswerIndex = 0; break;
+		                case "B": userAnswerIndex = 1; break;
+		                case "C": userAnswerIndex = 2; break;
+		                case "D": userAnswerIndex = 3; break;
+		                default:
+		                    System.out.println("Invalid input. Please enter A, B, C, or D.");
+		                    continue;
+		            }
+		            break;
+		        }
 
-	        // Evaluate answer
-	        if (userAnswerIndex == q.getCorrectAnswerIndex()) {
-	            System.out.println("Correct! " + questionScore +" points.");
-	            points += questionScore;
-	            correctStreak++;
-	            wrongStreak = 0;
-	        } else {
-	            System.out.println("Incorrect. The correct answer was: " +
-	                (char)('A' + q.getCorrectAnswerIndex()));
-	            wrongStreak++;
-	            correctStreak = 0;
-	        }
+		        // Evaluate answer
+		        if (userAnswerIndex == q.getCorrectAnswerIndex()) {
+		            System.out.println("Correct! " + questionScore +" points.");
+		            points += questionScore;
+		            correctStreak++;
+		            wrongStreak = 0;
+		        } else {
+		            System.out.println("Incorrect. The correct answer was: " +
+		                (char)('A' + q.getCorrectAnswerIndex()));
+		            wrongStreak++;
+		            correctStreak = 0;
+		        }
 
-	        questionsAnswered++;
-	    }
+		        questionsAnswered++;
+		    }
 
-	    System.out.println("\nGame Over! You scored: " + points + " points.");
+		    System.out.println("\nGame Over! You scored: " + points + " points.");
+		} finally {
+		    scanner.close();
+		}
 	}
 
 
     public static void main(String[] args){
-    	Scanner scanner = new Scanner(System.in);
+    	try (Scanner scanner = new Scanner(System.in)) {
+		System.out.println("Choose a subject: ");
+		System.out.println("1. Math\n2. Science\n3. Verbal Reasoning\n4. Technology\n5. Sports\n6. World History\n7. Geography\n8. Health and Medicine");
+		System.out.println("------------------------");
+		SimulateGame game = new SimulateGame();
 
-    	System.out.println("Choose a subject: ");
-        System.out.println("1. Math\n2. Science\n3. Verbal Reasoning\n4. Technology\n5. Sports\n6. World History\n7. Geography\n8. Health and Medicine");
-        System.out.println("------------------------");
-        SimulateGame game = new SimulateGame();
-
-        int n = Integer.parseInt(scanner.nextLine());
-        game.ingestQuestions(n);
-        game.playGame();
+		int n = Integer.parseInt(scanner.nextLine());
+		game.ingestQuestions(n);
+		game.playGame();
+	} catch (NumberFormatException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
 
 
 	}
