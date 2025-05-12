@@ -83,7 +83,7 @@ public class MaxHeap {
             return null;
         }
 
-        // We want to remove the root and replace it with the largest child
+        // Wremove the root and replace it with the largest child
         if (node.left == null && node.right == null) {
             return null;
         }
