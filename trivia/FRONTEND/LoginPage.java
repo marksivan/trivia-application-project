@@ -56,7 +56,7 @@ public class LoginPage extends JPanel {
         gbc.gridx = 1;
         gbc.weightx = 1.0;
         usernameField = new GenericComponents.QuizTextField(
-            "Enter username",
+            "",
             GenericComponents.ThemeManager.getBorder(),
             GenericComponents.ThemeManager.getBackground(),
             GenericComponents.ThemeManager.getText(),
@@ -79,7 +79,7 @@ public class LoginPage extends JPanel {
         gbc.gridx = 1;
         gbc.weightx = 1.0;
         passwordField = new GenericComponents.QuizTextField(
-            "Enter password",
+            "",
             GenericComponents.ThemeManager.getBorder(),
             GenericComponents.ThemeManager.getBackground(),
             GenericComponents.ThemeManager.getText(),
