@@ -216,12 +216,12 @@ public class GenericComponents {
             header.setBorder(BorderFactory.createEmptyBorder(15, 20, 15, 20));
 
             JLabel titleLabel = new JLabel(title);
-            titleLabel.setFont(new Font("Helvetica", Font.BOLD, 24));
+            titleLabel.setFont(new Font("Times New Roman", Font.BOLD, 24));
             titleLabel.setForeground(Color.WHITE);
             header.add(titleLabel, BorderLayout.WEST);
 
             JLabel scoreLabel = new JLabel(score);
-            scoreLabel.setFont(new Font("Helvetica", Font.PLAIN, 16));
+            scoreLabel.setFont(new Font("Times New Roman", Font.PLAIN, 16));
             scoreLabel.setForeground(Color.WHITE);
             header.add(scoreLabel, BorderLayout.EAST);
         }
@@ -232,7 +232,7 @@ public class GenericComponents {
         public QuizComboBox(String[] items) {
             super(new JComboBox<>(items));
             JComboBox<?> combo = (JComboBox<?>) getComponent();
-            combo.setFont(new Font("Helvetica", Font.PLAIN, 14));
+            combo.setFont(new Font("Times New Roman", Font.PLAIN, 14));
             combo.setBackground(Color.WHITE);
         }
     }
@@ -294,14 +294,14 @@ public class GenericComponents {
             int x = padding;
             int y = padding;
 
-            // Background - use theme border color
+            // Background use theme border color
             g2.setColor(ThemeManager.getBorder());
             g2.fillOval(x, y, diameter, diameter);
 
             // Time color, use theme colors
             if (secondsRemaining > Settings.getInstance().getQuestionTimeLimit() / 2) g2.setColor(ThemeManager.getSuccess());      // Green
-            else if (secondsRemaining > Settings.getInstance().getQuestionTimeLimit() / 4) g2.setColor(ThemeManager.getButton());  // Theme button color
-            else g2.setColor(Color.RED);                        // Theme hover color
+            else if (secondsRemaining > Settings.getInstance().getQuestionTimeLimit() / 3) g2.setColor(ThemeManager.getButton());  // Theme button color
+            else g2.setColor(Color.RED);  // Theme hover color
 
             float angle = 360f * secondsRemaining / Settings.getInstance().getQuestionTimeLimit();
             g2.fillArc(x, y, diameter, diameter, 90, -(int) angle);

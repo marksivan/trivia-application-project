@@ -35,7 +35,7 @@ public class HomePage extends JPanel {
     private void setupHeader() {
         GenericComponents.QuizHeader header = new GenericComponents.QuizHeader(
             "Trivia Game", 
-            "Welcome, " + AuthManager.getInstance().getCurrentUser()
+            "Welcome, " + AuthManager.getInstance().getCurrentUser() + "!"
         );
         headerContainer = new JPanel(new BorderLayout());
         headerContainer.setBackground(GenericComponents.ThemeManager.isDarkMode() ? 
@@ -49,7 +49,7 @@ public class HomePage extends JPanel {
             Color.WHITE,
             new Font("Times New Roman", Font.BOLD, 14),
             8, 15, true, true,
-            e -> handleBackButton()
+            e -> handleHomeButton()
         );
         JPanel backButtonPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 10));
         backButtonPanel.setOpaque(false);
@@ -80,33 +80,6 @@ public class HomePage extends JPanel {
             false, null, null
         );
         rootPanel.add(contentPanel.getComponent(), BorderLayout.CENTER);
-    }
-
-    private void handleBackButton() {
-        if (currentQuestionIndex > 0) {
-            int confirm = JOptionPane.showConfirmDialog(
-                this,
-                "Are you sure you want to return to home? Your game progress will be lost.",
-                "Confirm Return",
-                JOptionPane.YES_NO_OPTION
-            );
-            if (confirm == JOptionPane.YES_OPTION) {
-                handleHomeButton();
-            }
-        } else {
-            resetGameState();
-        }
-    }
-
-    private void resetGameState() {
-        gameController.reset();
-        circularClock.stop();
-        currentQuestionIndex = 0;
-        clockPanel.setVisible(false);
-        ((JPanel)contentPanel.getComponent()).removeAll();
-        showMainMenu();
-        rootPanel.revalidate();
-        rootPanel.repaint();
     }
 
     private void showMainMenu() {
@@ -292,13 +265,22 @@ public class HomePage extends JPanel {
                 currentQuestionIndex = 0;
                 clockPanel.setVisible(false);
                 if (gameController != null) {
-                    gameController = new GameController();
+                    gameController.reset();
                 }
                 // Show main menu
                 showMainMenu();
             }
-        } else {
-            resetGameState();
+
+        }else{
+            // Reset game state
+            circularClock.stop();
+            currentQuestionIndex = 0;
+            clockPanel.setVisible(false);
+            if (gameController != null) {
+                gameController.reset();
+            }
+            // Show main menu
+            showMainMenu();
         }
     }
 
@@ -348,6 +330,7 @@ public class HomePage extends JPanel {
         }
         
         // Show first question
+        currentQuestionIndex++;
         showNextQuestion();
     }
     
