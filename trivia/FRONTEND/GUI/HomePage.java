@@ -14,7 +14,7 @@ public class HomePage extends JPanel {
     private Timer slideTimer;
     private int currentQuestionIndex = 0;
     private GameController gameController;
-    private String selectedCategory;
+    private String currentCategory;
     private Question currentQuestion;
 
     public HomePage() {
@@ -308,8 +308,9 @@ public class HomePage extends JPanel {
         // Randomly select a category
         if (isRandom) {
             int randomIndex = (int) (Math.random() * categories.length);
-            selectedCategory = categories[randomIndex];
-        } 
+            category = categories[randomIndex];
+        }
+        currentCategory = category;
         int categoryChoice = 0;
         switch(category) {
             case "Math":
@@ -380,7 +381,7 @@ public class HomePage extends JPanel {
         // Question header with question number, category and difficulty
         String difficulty = gameController.getQuestionDifficulty(currentQuestion);
         GenericComponents.QuizLabel questionHeader = new GenericComponents.QuizLabel(
-            "Question " + gameController.getCurrentQuestionNumber() + " - " + selectedCategory + " (" + difficulty + ")",
+            "Question " + gameController.getCurrentQuestionNumber() + " out of " + Settings.getInstance().getQuestionsPerGame() + " - " + currentCategory + " (" + difficulty + ")",
             new Font("Times New Roman", Font.BOLD, 18),
             GenericComponents.ThemeManager.getText(),
             null, 10, true, false, true

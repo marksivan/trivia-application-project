@@ -13,9 +13,9 @@ public class Settings {
     
     // UI Settings
     private boolean isDarkMode = false;
-    private Font defaultFont = new Font("Times New Roman", Font.PLAIN, 14);
-    private Font titleFont = new Font("Times New Roman", Font.BOLD, 24);
-    private Font buttonFont = new Font("Times New Roman", Font.BOLD, 16);
+    private Font defaultFont = new Font("Times New Roman", Font.PLAIN, 18);
+    private Font titleFont = new Font("Times New Roman", Font.BOLD, 20);
+    private Font buttonFont = new Font("Times New Roman", Font.BOLD, 20);
     
     // Theme Colors
     private Color primaryColor = new Color(255, 222, 33);
