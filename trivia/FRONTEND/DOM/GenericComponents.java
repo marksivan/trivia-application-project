@@ -261,8 +261,8 @@ public class GenericComponents {
             });
         }
 
-        public void setDuration(int seconds) {
-            secondsRemaining = seconds;
+        public void setDuration() {
+            secondsRemaining = Settings.getInstance().getQuestionTimeLimit();
         }
 
         public void start() {
@@ -301,7 +301,7 @@ public class GenericComponents {
             // Time color, use theme colors
             if (secondsRemaining > Settings.getInstance().getQuestionTimeLimit() / 2) g2.setColor(ThemeManager.getSuccess());      // Green
             else if (secondsRemaining > Settings.getInstance().getQuestionTimeLimit() / 4) g2.setColor(ThemeManager.getButton());  // Theme button color
-            else g2.setColor(ThemeManager.getButtonHover());                        // Theme hover color
+            else g2.setColor(Color.RED);                        // Theme hover color
 
             float angle = 360f * secondsRemaining / Settings.getInstance().getQuestionTimeLimit();
             g2.fillArc(x, y, diameter, diameter, 90, -(int) angle);

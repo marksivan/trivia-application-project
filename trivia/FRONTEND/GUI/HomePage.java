@@ -896,7 +896,7 @@ public class HomePage extends JPanel {
                 }
                 
                 // Update clock duration
-                circularClock.setDuration(Settings.getInstance().getQuestionTimeLimit());
+                circularClock.setDuration();
                 
                 JOptionPane.showMessageDialog(this, "Settings saved successfully!");
                 showMainMenu();

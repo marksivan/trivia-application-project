@@ -12,10 +12,10 @@ public class MainFrame extends JFrame {
     private JPanel mainPanel;
 
     public MainFrame() {
-        setTitle("Trivia Game");
+        setTitle("Irenee & Mark's Trivia Game");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(1024, 768);
-        setMinimumSize(new Dimension(800, 600));
+        setMinimumSize(new Dimension(200, 200));
         setLocationRelativeTo(null);
         setResizable(true);
         mainPanel = new JPanel();
