@@ -34,7 +34,7 @@ Question,Option A,Option B,Option C,Option D,Correct Answer Index,Difficulty Lev
 "What type of reaction occurs when an atom's nucleus is split?",Fission,Fusion,Radioactive decay,Alpha decay,0,10
 "Which particle is responsible for the strong nuclear force?",Photon,Neutron,Quark,Gluon,3,10
 "What is the main component of the Sun?",Hydrogen,Helium,Carbon,Iron,0,15
-"What is the name of the region around a black hole where nothing can escape?",Event Horizon,Photon Sphere,Accretion Disk,Singularity,0,15
+"What is the name of the region around a black hole where nothing can escape?",Event Horizon,Photon Sphere,Accretion Disk,Singularity,0,10
 "What is the principle of conservation of mass?",Matter cannot be created or destroyed,Energy cannot be created or destroyed,Mass is relative to the speed of light,Energy and matter are interchangeable,0,15
 "What is the equation that defines Einstein’s theory of relativity?",E = mc²,PV = nRT,F = ma,V = IR,0,2
 "What principle implies measurement disturbs a quantum system",Heisenberg Uncertainty Principle,Pauli Exclusion Principle,Superposition Principle,Complementarity Principle,0,10
@@ -64,13 +64,13 @@ Question,Option A,Option B,Option C,Option D,Correct Answer Index,Difficulty Lev
 "What property describes a substance that does not conduct electricity",Insulator,Conductor,Semiconductor,Electrolyte,0,10
 "What is the pH of a neutral solution at 25C",0,7,14,1,1,10
 "What is the term for oxidation without oxygen",Anaerobic,Aerobic,Hypoxic,Oxidative,0,10
-"What particle mediates the weak nuclear force",Photon,Gluon,Z Boson,Electron,2,14
+"What particle mediates the weak nuclear force",Photon,Gluon,Z Boson,Electron,2,19
 "What is the principle that energy is quantized",Plancks Principle,Pauli Principle,Heisenberg Principle,Born Principle,0,10
 "What is the effect of catalyst on activation energy",Increases,Decreases,No Change,Reverses,1,7
 "What field studies classification of organisms",Genetics,Anatomy,Taxonomy,Physiology,2,10
 "What gas law describes volume and temperature relation",Boyles Law,Charles Law,Avogadros Law,Daltons Law,1,10
-"What is the basic unit of heredity",Chromosome,Gene,Allele,DNA,1,3
-"What is the cell cycle phase for DNA replication",G1,S,G2,M,1,12
+"What is the basic unit of heredity",Chromosome,Gene,Allele,DNA,1,10
+"What is the cell cycle phase for DNA replication",G1,S,G2,M,1,10
 "What is the minimum energy to remove an electron",Ionization Energy,Activation Energy,Binding Energy,Work Function,0,10
 "What process forms glucose in plants",Respiration,Transpiration,Photosynthesis,Digestion,2,8
 "What describes curved space around mass",Gravity Field,Electric Field,Magnetic Field,Gravitational Field,3,10

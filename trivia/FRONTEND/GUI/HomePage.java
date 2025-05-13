@@ -246,13 +246,6 @@ public class HomePage extends JPanel {
         );
         textPanel.add(categoryLabel.getComponent(), textGbc);
 
-        textGbc.gridy = 1;
-        JLabel descriptionLabel = new JLabel("Click to start");
-        descriptionLabel.setFont(new Font("Times New Roman", Font.PLAIN, 16));
-        descriptionLabel.setForeground(new Color(240, 240, 240));
-        descriptionLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        textPanel.add(descriptionLabel, textGbc);
-
         return textPanel;
     }
 
