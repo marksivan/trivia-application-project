@@ -262,7 +262,14 @@ public class HomePage extends JPanel {
         buttonPanel.add(createButton("Start Game", e -> startGame()).getComponent());
         buttonPanel.add(createButton("Settings", e -> showSettings()).getComponent());
         
-        buttonPanel.add(createButton("Logout", e -> AuthManager.getInstance().logout()).getComponent());
+        buttonPanel.add(createButton("Logout", e -> {
+            AuthManager.getInstance().logout();
+            // Get the parent frame and show login page
+            Window window = SwingUtilities.getWindowAncestor(this);
+            if (window instanceof MainFrame) {
+                ((MainFrame) window).showLoginPage();
+            }
+        }).getComponent());
         return buttonPanel;
     }
 

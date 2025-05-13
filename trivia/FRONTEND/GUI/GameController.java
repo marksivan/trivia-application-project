@@ -2,7 +2,6 @@ package GUI;
 import trivia.BACKEND.SimulateGame;
 import trivia.BACKEND.Question;
 import java.util.ArrayList;
-import java.util.Collections;
 /**
  * GameController acts as an adapter between the terminal-based SimulateGame
  * and the GUI-based HomePage.

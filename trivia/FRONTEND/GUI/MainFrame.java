@@ -56,7 +56,7 @@ public class MainFrame extends JFrame {
         });
     }
 
-    private void showLoginPage() {
+    public void showLoginPage() {
         cardLayout.show(mainPanel, "LOGIN");
         loginPage.requestFocusInWindow();
         loginPage.revalidate();

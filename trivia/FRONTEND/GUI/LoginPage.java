@@ -194,6 +194,9 @@ public class LoginPage extends JPanel {
                     AuthManager.getInstance().setRememberedUser(username);
                 } else {
                     AuthManager.getInstance().clearRememberedUser();
+                    // Clear password field if remember me is not checked
+                    ((JTextField)passwordField.getComponent()).setText("");
+                    ((JTextField)usernameField.getComponent()).setText("");
                 }
                 errorLabel.setText("");
                 onLoginSuccess.accept(true);
