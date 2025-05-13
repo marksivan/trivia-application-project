@@ -99,6 +99,7 @@ public class HomePage extends JPanel {
     }
 
     private void resetGameState() {
+        gameController.reset();
         circularClock.stop();
         currentQuestionIndex = 0;
         clockPanel.setVisible(false);
@@ -221,8 +222,7 @@ public class HomePage extends JPanel {
 
         cardPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                selectedCategory = category;
-                startGame();
+                startGame(false, category);
             }
         });
 
@@ -259,9 +259,9 @@ public class HomePage extends JPanel {
     private JPanel createButtonPanel() {
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 15));
         buttonPanel.setOpaque(false);
-        buttonPanel.add(createButton("Start Game", e -> startGame()).getComponent());
+        buttonPanel.add(createButton("Random Game", e -> startGame(true, "")).getComponent());
         buttonPanel.add(createButton("Settings", e -> showSettings()).getComponent());
-        
+        buttonPanel.add(createButton("Reset App", e -> handleResetApp()).getComponent());
         buttonPanel.add(createButton("Logout", e -> {
             AuthManager.getInstance().logout();
             // Get the parent frame and show login page
@@ -279,35 +279,46 @@ public class HomePage extends JPanel {
             GenericComponents.ThemeManager.getButton(),
             GenericComponents.ThemeManager.getButtonHover(),
             GenericComponents.ThemeManager.getText(),
-            new Font("Helvetica", Font.BOLD, 16),
+            new Font("Times New Roman", Font.BOLD, 16),
             10, 25, true, true,
             onClick
         );
     }
 
     private void handleHomeButton() {
-        if (gameController != null) {
+        if (currentQuestionIndex > 0) {
             int confirm = JOptionPane.showConfirmDialog(
                 this,
-                "Are you sure you want to stop the game? Your progress will be lost.",
-                "Confirm Stop",
+                "Are you sure you want to return to home? Your game progress will be lost.",
+                "Confirm Return",
                 JOptionPane.YES_NO_OPTION
             );
             if (confirm == JOptionPane.YES_OPTION) {
+                // Reset game state
                 circularClock.stop();
+                currentQuestionIndex = 0;
                 clockPanel.setVisible(false);
+                if (gameController != null) {
+                    gameController = new GameController();
+                }
+                // Show main menu
                 showMainMenu();
             }
         } else {
-            JOptionPane.showMessageDialog(this, "Please start a game first!");
+            resetGameState();
         }
     }
 
-    private void startGame() {
-        
-        
+    private void startGame(boolean isRandom, String category) {
+        // Array of all available categories
+        String[] categories = {"Math", "Science", "Verbal Reasoning", "Technology", "Sports", "World History", "Geography", "Health and Medicine"};
+        // Randomly select a category
+        if (isRandom) {
+            int randomIndex = (int) (Math.random() * categories.length);
+            selectedCategory = categories[randomIndex];
+        } 
         int categoryChoice = 0;
-        switch(selectedCategory) {
+        switch(category) {
             case "Math":
                 categoryChoice = 1;
                 break;
@@ -373,10 +384,10 @@ public class HomePage extends JPanel {
             BorderFactory.createLineBorder(new Color(0, 0, 0, 30), 1)
         ));
         
-        // Question header with question number and difficulty
+        // Question header with question number, category and difficulty
         String difficulty = gameController.getQuestionDifficulty(currentQuestion);
         GenericComponents.QuizLabel questionHeader = new GenericComponents.QuizLabel(
-            "Question " + gameController.getCurrentQuestionNumber() + " (" + difficulty + ")",
+            "Question " + gameController.getCurrentQuestionNumber() + " - " + selectedCategory + " (" + difficulty + ")",
             new Font("Times New Roman", Font.BOLD, 18),
             GenericComponents.ThemeManager.getText(),
             null, 10, true, false, true
@@ -454,7 +465,7 @@ public class HomePage extends JPanel {
         feedbackPanel.setOpaque(false);
         feedbackPanel.setBorder(BorderFactory.createCompoundBorder(
             BorderFactory.createEmptyBorder(10, 10, 10, 10),
-            BorderFactory.createLineBorder(new Color(0, 0, 0, 30), 1)
+            BorderFactory.createLineBorder(new Color(0, 0, 0, 30), 0)
         ));
         
         String feedbackText;
@@ -713,15 +724,6 @@ public class HomePage extends JPanel {
         content.repaint();
     }
 
-    private void resetGame() {
-        if (gameController != null) {
-            gameController = new GameController();
-            showMainMenu();
-        } else {
-            JOptionPane.showMessageDialog(this, "Please start a game first!");
-        }
-    }
-
     private void showSettings() {
         // Only show settings if no game is in progress
         if (currentQuestionIndex > 0) {
@@ -885,6 +887,16 @@ public class HomePage extends JPanel {
                 // Apply theme if changed
                 String selectedTheme = (String) themeCombo.getSelectedItem();
                 if (selectedTheme.equals("Dark") != GenericComponents.ThemeManager.isDarkMode()) {
+                    // Only toggle if we need to change the theme
+                    if (selectedTheme.equals("Dark")) {
+                        if (!GenericComponents.ThemeManager.isDarkMode()) {
+                            GenericComponents.ThemeManager.toggleTheme();
+                        }
+                    } else {
+                        if (GenericComponents.ThemeManager.isDarkMode()) {
+                            GenericComponents.ThemeManager.toggleTheme();
+                        }
+                    }
                     Settings.getInstance().setDarkMode(selectedTheme.equals("Dark"));
                     applyTheme(Settings.getInstance().isDarkMode());
                 }
@@ -986,6 +998,51 @@ public class HomePage extends JPanel {
                 ((JButton) comp).setBackground(GenericComponents.ThemeManager.getButton());
                 ((JButton) comp).setForeground(GenericComponents.ThemeManager.getText());
             }
+        }
+    }
+
+    private void handleResetApp() {
+        int confirm = JOptionPane.showConfirmDialog(
+            this,
+            "Are you sure you want to reset the app? This will:\n" +
+            "1. Reset all settings to defaults\n" +
+            "2. Clear any ongoing game\n" +
+            "3. Reset theme to default\n\n" +
+            "This action cannot be undone.",
+            "Confirm Reset",
+            JOptionPane.YES_NO_OPTION,
+            JOptionPane.WARNING_MESSAGE
+        );
+
+        if (confirm == JOptionPane.YES_OPTION) {
+            // Reset settings to defaults
+            Settings.getInstance().resetToDefaults();
+            
+            // Reset theme to light mode
+            if (GenericComponents.ThemeManager.isDarkMode()) {
+                GenericComponents.ThemeManager.toggleTheme();
+            }
+            
+            // Reset game state
+            if (gameController != null) {
+                gameController = new GameController();
+            }
+            
+            // Reset UI state
+            circularClock.stop();
+            currentQuestionIndex = 0;
+            clockPanel.setVisible(false);
+            
+            // Show success message
+            JOptionPane.showMessageDialog(
+                this,
+                "App has been reset to defaults successfully!",
+                "Reset Complete",
+                JOptionPane.INFORMATION_MESSAGE
+            );
+            
+            // Refresh the main menu
+            showMainMenu();
         }
     }
 } 

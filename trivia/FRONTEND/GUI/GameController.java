@@ -60,10 +60,9 @@ public class GameController {
      */
     
     public Question getNextQuestion() {
-        if (currentQuestionIndex >= totalQuestionsToAsk) {
+        if (currentQuestionIndex+1 >= totalQuestionsToAsk) {
             return null; // Game over
         }
-
         // Logic similar to SimulateGame's playGame method
         if (wrongStreak >= 3 && !game.easyQuestions.isEmpty()) {
             currentQuestion = game.easyQuestions.pop();
@@ -75,6 +74,7 @@ public class GameController {
         } else if (!currentQuestions.isEmpty()) {
             currentQuestion = currentQuestions.remove(currentQuestions.size() - 1);
         } else {
+
             return null; // No more questions available
         }
 
@@ -140,7 +140,12 @@ public class GameController {
      * Check if the game is over
      */
     public boolean isGameOver() {
-        return currentQuestionIndex >= totalQuestionsToAsk;
+        if (currentQuestionIndex >= totalQuestionsToAsk) {
+
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -199,6 +204,7 @@ public class GameController {
      * Reset the game state
      */
     public void reset() {
+        game = new SimulateGame();
         currentQuestionIndex = 0;
         score = 0;
         wrongStreak = 0;

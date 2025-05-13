@@ -298,7 +298,7 @@ public class GenericComponents {
             g2.setColor(ThemeManager.getBorder());
             g2.fillOval(x, y, diameter, diameter);
 
-            // Time color - use theme colors
+            // Time color, use theme colors
             if (secondsRemaining > Settings.getInstance().getQuestionTimeLimit() / 2) g2.setColor(ThemeManager.getSuccess());      // Green
             else if (secondsRemaining > Settings.getInstance().getQuestionTimeLimit() / 4) g2.setColor(ThemeManager.getButton());  // Theme button color
             else g2.setColor(ThemeManager.getButtonHover());                        // Theme hover color

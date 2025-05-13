@@ -1,8 +1,5 @@
 package GUI;
 
-
-import DOM.GenericComponents;
-
 import java.awt.Color;
 import java.awt.Font;
 
@@ -63,7 +60,6 @@ public class Settings {
     public boolean isDarkMode() { return isDarkMode; }
     public void setDarkMode(boolean darkMode) { 
         isDarkMode = darkMode;
-        GenericComponents.ThemeManager.toggleTheme();
     }
     
     public Font getDefaultFont() { return defaultFont; }
