@@ -416,7 +416,7 @@ public class GenericComponents {
         }
         
         public static Color getButtonHover() {
-            return isDarkMode ? new Color(44, 62, 80) : new Color(41, 128, 185);
+            return isDarkMode ? new Color(44, 62, 80) : new Color(0xA5D6A7); // light green
         }
         
         public static Color getSuccess() {

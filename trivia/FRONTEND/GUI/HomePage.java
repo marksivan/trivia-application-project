@@ -177,7 +177,7 @@ public class HomePage extends JPanel {
 
     private JPanel createCategoryCard(String category) {
         Color defaultColor = GenericComponents.ThemeManager.getButton();
-        Color hoverColor = new Color(0xFFD700); // gold
+        Color hoverColor = new Color(0xA5D6A7); // light green
     
         JPanel cardPanel = new JPanel(new BorderLayout(20, 20)) {
             @Override
@@ -240,6 +240,7 @@ public class HomePage extends JPanel {
     private JPanel createButtonPanel() {
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 15));
         buttonPanel.setOpaque(false);
+        buttonPanel.setBackground(GenericComponents.ThemeManager.getButton());
         buttonPanel.add(createButton("Random Game", e -> startGame(true, "")).getComponent());
         buttonPanel.add(createButton("Settings", e -> showSettings()).getComponent());
         buttonPanel.add(createButton("Reset App", e -> handleResetApp()).getComponent());
