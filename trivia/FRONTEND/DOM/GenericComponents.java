@@ -130,7 +130,7 @@ public class GenericComponents {
         
             if (hasShadow) {
                 label.setBorder(BorderFactory.createCompoundBorder(
-                    BorderFactory.createLineBorder(new Color(0, 0, 0, 30), 1),
+                    BorderFactory.createLineBorder(new Color(0, 0, 0, 30), 0),
                     label.getBorder()
                 ));
             }
