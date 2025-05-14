@@ -176,7 +176,6 @@ public class SimulateGame{
 		game.ingestQuestions(n);
 		game.playGame();
 	} catch (NumberFormatException e) {
-		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
 

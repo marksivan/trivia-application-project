@@ -171,13 +171,13 @@ public class LoginPage extends JPanel {
         // Clear previous error
         errorLabel.setText("");
         
-        if (username == null || username.trim().isEmpty() || username.equals("Enter username")) {
+        if (username == null || username.trim().isEmpty() || username.equals("")) {
             errorLabel.setText("Please enter a username");
             usernameField.getComponent().requestFocusInWindow();
             return;
         }
         
-        if (password == null || password.trim().isEmpty() || password.equals("Enter password")) {
+        if (password == null || password.trim().isEmpty() || password.equals("")) {
             errorLabel.setText("Please enter a password");
             passwordField.getComponent().requestFocusInWindow();
             return;
