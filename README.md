@@ -15,22 +15,22 @@ This is a Java-based trivia game with a real-time adaptive difficulty system. Qu
 How to Compile and Run
 
 Open your terminal and follow the steps below:
-
+-------------------------------------------------------------------------
 Step 1: Navigate to the project directory
 
 cd trivia-application-project
-
+---------------------------------------------------------------------------
 
 Step 2: Compile all Java files to the bin directory
 
 javac -d bin $(find trivia -name "*.java")
-
+-----------------------------------------------------------------------------
  
 Step 3: Move into the compiled classes directory
 
 cd bin
 
-
+----------------------------------------------------------------------------
 Step 4: Run the application
 
 java GUI.MainFrame
