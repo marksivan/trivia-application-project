@@ -29,8 +29,8 @@ javac -d bin $(find trivia -name "*.java")
 Step 3: Move into the compiled classes directory
 
 cd bin
-
 ----------------------------------------------------------------------------
 Step 4: Run the application
 
 java GUI.MainFrame
+----------------------------------------------------------------------------
