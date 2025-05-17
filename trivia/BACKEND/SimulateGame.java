@@ -17,6 +17,8 @@ public class SimulateGame{
 	}
 
 	public void ingestQuestions(int choice){
+
+		// choose which file to read data from
 		String filePath = "";
 		if(choice == 1){
 			filePath = "trivia/BACKEND/QUESTIONS/math.csv";
@@ -54,7 +56,8 @@ public class SimulateGame{
 			options[3] = questionDetails[4].replaceAll("^\"|\"$", "");
 			int correctAnswerIndex = Integer.parseInt(questionDetails[5].trim());
             int difficultyLevel = Integer.parseInt(questionDetails[6].trim());
-
+            
+            // create a new Question object from each line of the csv file
 			Question newQuestion = new Question(questionText, options, correctAnswerIndex, difficultyLevel);
 
 			if(newQuestion.getDifficultyLevel() == 10){
@@ -66,7 +69,7 @@ public class SimulateGame{
 			}
 
              }
-	     Collections.shuffle(mediumQuestions);	 
+	     Collections.shuffle(mediumQuestions);	// Shuffle all medium questions 
 		
 
 	}  catch (FileNotFoundException e) {
@@ -78,7 +81,6 @@ public class SimulateGame{
         }
     }
 		public void playGame() {
-	//     Collections.shuffle(mediumQuestions);
 	    Scanner scanner = new Scanner(System.in);
 
 	    try {
@@ -105,6 +107,8 @@ public class SimulateGame{
 		        }
 	            int questionScore;
 		        String difficulty = "";
+
+		        // Assign scores to the various questions based on their difficulty level
 		        if(q.getDifficultyLevel() == 10){
 		        	difficulty = " (Medium)";
 		        	questionScore = 10;
