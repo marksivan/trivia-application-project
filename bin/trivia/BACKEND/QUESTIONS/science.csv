@@ -1,0 +1,79 @@
+Question,Option A,Option B,Option C,Option D,Correct Answer Index,Difficulty Level
+"What is the primary constituent of the Earth’s core?",Oxygen,Iron,Nitrogen,Magnesium,1,1
+"Which planet is closest to the Sun?",Venus,Earth,Mars,Mercury,3,3
+"What is the chemical symbol for water?",H2O,O2,CO2,NaCl,0,5
+"Which of these is a noble gas?",Oxygen,Nitrogen,Argon,Hydrogen,2,7
+"What is the chemical formula for methane?",CH4,C2H6,CO2,O2,0,6
+"What is the boiling point of water in Celsius?",0°C,50°C,100°C,150°C,2,8
+"What is the process by which plants make their food?",Photosynthesis,Growth,Respiration,Absorption,0,4
+"What gas do plants absorb during photosynthesis?",Carbon Dioxide,Oxygen,Nitrogen,Hydrogen,0,9
+"What is the smallest unit of matter?",Molecule,Atom,Proton,Electron,1,2
+"What element is a liquid at room temperature?",Oxygen,Nitrogen,Hydrogen,Mercury,3,10
+"What is the primary constituent of the Earth’s core?",Oxygen,Iron,Nitrogen,Magnesium,1,10
+"Which planet has the longest day?",Venus,Mars,Earth,Jupiter,0,10
+"What is the name of the process that breaks down glucose to produce energy?",Glycolysis,Photosynthesis,Cellular Respiration,Fermentation,2,10
+"What is the most stable form of carbon?",Diamond,Graphite,Fullerenes,Graphene,1,10
+"Which of these subatomic particles has no charge?",Proton,Neutron,Electron,Photon,1,10
+"What is the main reason why some metals conduct electricity better than others?",Electron affinity,Electrical conductivity,Atomic size,Electron mobility,3,10
+"What phenomenon explains the bending of light as it passes through different mediums?",Refraction,Reflection,Diffraction,Dispersion,0,10
+"What is the mass of an electron?",9.11 × 10⁻³¹ kg,1.67 × 10⁻²⁷ kg,1.67 × 10⁻¹⁶ kg,9.11 × 10⁻²⁷ kg,0,10
+"What type of bond occurs when electrons are shared equally between atoms?",Ionic bond,Covalent bond,Polar covalent bond,Metallic bond,1,10
+"What is the name of the molecule that stores genetic information?",RNA,DNA,ATP,Protein,1,10
+"Which theory explains the motion of tectonic plates?",Theory of Relativity,Quantum Mechanics,Plate Tectonics,Geocentric Theory,2,10
+"What does the term half-life refer to in chemistry?",The time it takes for half of a sample to react,The time it takes for half of a sample to decay,The time it takes for half of a substance to burn,The time it takes for half of a sample to evaporate,1,10
+"What is the force that keeps the planets in orbit around the Sun?",Electromagnetic force,Gravitational force,Strong nuclear force,Weak nuclear force,1,10
+"What is the central region of an atom called?",Electron cloud,Nucleus,Orbital shell,Subatomic nucleus,1,10
+"Which gas makes up approximately 78% of the Earth's atmosphere?",Oxygen,Nitrogen,Carbon Dioxide,Argon,1,10
+"What phenomenon is responsible for the sky appearing blue during the day?",Refraction,Scattering,Reflection,Absorption,1,10
+"What is the name of the largest moon of Saturn?",Titan,Europa,Io,Callisto,0,10
+"What element is commonly used in X-ray technology?",Carbon,Gold,Lead,Tungsten,3,10
+"What is the name of the biological process used to convert light into chemical energy?",Respiration,Photosynthesis,Oxidation,Reduction,1,10
+"What is the Heisenberg Uncertainty Principle?",It is impossible to simultaneously know the position and velocity of a particle,Energy cannot be created or destroyed,Light behaves as both a particle and a wave,The universe is made of atoms,0,11
+"What does the term 'black hole' refer to?",A collapsed star with intense gravity,A dark region in space that absorbs light,An object that warps space-time,All of the above,3,12
+"What process is responsible for the formation of stars?",Fusion,Supernova,Condensation,Accretion,0,13
+"What type of reaction occurs when an atom's nucleus is split?",Fission,Fusion,Radioactive decay,Alpha decay,0,10
+"Which particle is responsible for the strong nuclear force?",Photon,Neutron,Quark,Gluon,3,10
+"What is the main component of the Sun?",Hydrogen,Helium,Carbon,Iron,0,15
+"What is the name of the region around a black hole where nothing can escape?",Event Horizon,Photon Sphere,Accretion Disk,Singularity,0,10
+"What is the principle of conservation of mass?",Matter cannot be created or destroyed,Energy cannot be created or destroyed,Mass is relative to the speed of light,Energy and matter are interchangeable,0,15
+"What is the equation that defines Einstein’s theory of relativity?",E = mc²,PV = nRT,F = ma,V = IR,0,2
+"What principle implies measurement disturbs a quantum system",Heisenberg Uncertainty Principle,Pauli Exclusion Principle,Superposition Principle,Complementarity Principle,0,10
+"What tensor describes the curvature of spacetime",Einstein Tensor,Riemann Curvature Tensor,Metric Tensor,Stress Energy Tensor,1,10
+"What law states energy cannot be created or destroyed",First Law of Thermodynamics,Second Law of Thermodynamics,Conservation of Momentum,Conservation of Charge,0,10
+"What principle explains light behaving as particle and wave",Complementarity Principle,Photoelectric Principle,Heisenberg Principle,Pauli Principle,0,10
+"What effect causes spectral lines to shift due to motion",Doppler Effect,Zeeman Effect,Stark Effect,Compton Effect,0,10
+"What process in stars transports energy by bulk fluid motion",Convection,Radiation,Conduction,Advection,0,10
+"What cycle describes nitrogen conversion in ecosystems",Nitrogen Cycle,Water Cycle,Carbon Cycle,Phosphorus Cycle,0,10
+"What law relates gas pressure and volume at constant temperature",Boyle Law,Charles Law,Avogadro Law,Ideal Gas Law,0,10
+"What conjecture posits singularities are hidden from observers",Cosmic Censorship,No Hair Theorem,Equivalence Principle,Pauli Exclusion,0,10
+"What principle states probabilities derive from wave functions",Born Rule,Pauli Exclusion Principle,Correspondence Principle,Uncertainty Principle,0,10
+"What limit sets maximum speed for information transfer",Speed of Light Limit,Chandrasekhar Limit,Heisenberg Limit,Planck Limit,0,10
+"What equation relates mass and energy",Mass Energy Equivalence,Navier Stokes Equation,Schroedinger Equation,Maxwell Equation,0,10
+"What phenomenon allows electrons to tunnel through barriers",Quantum Tunneling,Photoelectric Effect,Compton Scattering,Blackbody Radiation,0,10
+"What principle orders electrons in atomic shells",Aufbau Principle,Hunds Rule,Pauli Exclusion Principle,Periodic Law,0,1
+"What interaction is mediated by gluons",Strong Nuclear Force,Weak Nuclear Force,Electromagnetic Force,Gravitational Force,0,14
+"What effect explains emission of electrons from metals by light",Photoelectric Effect,Compton Effect,Hall Effect,Cherenkov Effect,0,10
+"What law describes entropy increase in isolated systems",Second Law of Thermodynamics,First Law of Thermodynamics,Third Law of Thermodynamics,Zeroth Law of Thermodynamics,0,13
+"What measurement principle limits simultaneous position and momentum knowledge",Uncertainty Principle,Correspondence Principle,Quantum Number Principle,Pauli Exclusion,0,14
+"What force binds protons and neutrons in nucleus",Strong Nuclear Force,Weak Nuclear Force,Gravitational Force,Electromagnetic Force,0,10
+"What concept describes particles with half integer spin",Fermions,Bosons,Leptons,Hadrons,0,18
+"What process converts pyruvate to acetyl CoA",Glycolysis,Citric Acid Cycle,Pyruvate Oxidation,Fermentation,2,13
+"What law relates current voltage and resistance",Ohms Law,Kirchhoffs Law,Faradays Law,Joules Law,0,10
+"What type of bond forms between water molecules",Ionic,Covalent,Hydrogen,Metallic,2,10
+"What organelle produces ATP in eukaryotic cells",Ribosome,Chloroplast,Mitochondrion,Nucleus,2,10
+"What property describes a substance that does not conduct electricity",Insulator,Conductor,Semiconductor,Electrolyte,0,10
+"What is the pH of a neutral solution at 25C",0,7,14,1,1,10
+"What is the term for oxidation without oxygen",Anaerobic,Aerobic,Hypoxic,Oxidative,0,10
+"What particle mediates the weak nuclear force",Photon,Gluon,Z Boson,Electron,2,19
+"What is the principle that energy is quantized",Plancks Principle,Pauli Principle,Heisenberg Principle,Born Principle,0,10
+"What is the effect of catalyst on activation energy",Increases,Decreases,No Change,Reverses,1,7
+"What field studies classification of organisms",Genetics,Anatomy,Taxonomy,Physiology,2,10
+"What gas law describes volume and temperature relation",Boyles Law,Charles Law,Avogadros Law,Daltons Law,1,10
+"What is the basic unit of heredity",Chromosome,Gene,Allele,DNA,1,10
+"What is the cell cycle phase for DNA replication",G1,S,G2,M,1,10
+"What is the minimum energy to remove an electron",Ionization Energy,Activation Energy,Binding Energy,Work Function,0,10
+"What process forms glucose in plants",Respiration,Transpiration,Photosynthesis,Digestion,2,8
+"What describes curved space around mass",Gravity Field,Electric Field,Magnetic Field,Gravitational Field,3,10
+"What type of reaction absorbs heat",Exothermic,Endothermic,Isothermal,Adiabatic,1,8
+"What is the SI base unit for amount of substance",Mole,Gram,Liter,Molecule,0,10
+"What phenomenon splits white light into spectrum",Reflection,Refraction,Diffraction,Dispersion,3,10
