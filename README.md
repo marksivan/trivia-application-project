@@ -53,9 +53,13 @@ cd bin
 ```
 Step 5: Run the application
 
+Terminal-based game app:
 ```
-java trivia.BACKEND.SimulateGame (Terminal-based game app)
-java GUI.MainFrame (GUI-based game app)
+java trivia.BACKEND.SimulateGame
+```
+GUI-based game app:
+```
+java GUI.MainFrame
 ```
 
 
