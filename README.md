@@ -75,7 +75,7 @@ trivia-application-project/
 │   │   ├── MinHeap.java
 │   │   ├── PriorityQueue.java
 │   │   ├── Question.java
-│   │   └── SimulateGame.java       # Game logic and adaptive system
+│   │   └── SimulateGame.java       # Game logic and adaptive system (Terminal app entry point)
 │   │
 │   ├── FRONTEND/
 │   │   ├── DOM/
@@ -83,7 +83,7 @@ trivia-application-project/
 │   │   │   └── GenericComponents.java
 │   │   └── GUI/
 │   │       ├── AuthManager.java
-│   │       ├── GameController.java
+│   │       ├── GameController.java       (Connector of FRONTEND to BACKEND)
 │   │       ├── HomePage.java
 │   │       ├── LoginPage.java
 │   │       ├── MainFrame.java      # GUI entry point
