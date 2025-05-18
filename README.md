@@ -51,17 +51,20 @@ Step 4: Move into the compiled classes directory
 ```
 cd bin
 ```
-Step 5: Run the application
+Step 5: Run the application:
+
+GUI-based game app:
+```
+java GUI.MainFrame
+```
+```
+OR
+```
 
 Terminal-based game app:
 ```
 java trivia.BACKEND.SimulateGame
 ```
-GUI-based game app:
-```
-java GUI.MainFrame
-```
-
 
 ## 📁 Project Structure
 
