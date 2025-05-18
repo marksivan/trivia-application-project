@@ -9,6 +9,8 @@ import java.awt.*;
 import javax.swing.*;
 import DOM.GenericComponents;
 import trivia.BACKEND.Question;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 public class HomePage extends JPanel { 
     private JPanel rootPanel;
     private GenericComponents.QuizPanel contentPanel;
@@ -202,34 +204,36 @@ public class HomePage extends JPanel {
                 g2.dispose();
             }
         };
-        cardPanel.setOpaque(false);
+        cardPanel.setOpaque(true);
         cardPanel.setBackground(defaultColor);
         cardPanel.setCursor(new Cursor(Cursor.HAND_CURSOR));
         cardPanel.setPreferredSize(new Dimension(300, 200));
     
         JPanel textPanel = createTextPanel(category);
+        textPanel.setOpaque(false);
         cardPanel.add(textPanel, BorderLayout.CENTER);
     
-        cardPanel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
+        MouseAdapter mouseAdapter = new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
                 cardPanel.setBackground(hoverColor);
                 cardPanel.repaint();
             }
     
-            public void mouseExited(java.awt.event.MouseEvent evt) {
+            @Override
+            public void mouseExited(MouseEvent e) {
                 cardPanel.setBackground(defaultColor);
                 cardPanel.repaint();
             }
     
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+            @Override
+            public void mouseClicked(MouseEvent e) {
                 startGame(false, category);
             }
-        });
-        textPanel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent e) {
-                startGame(false, category);
-            }
-        });
+        };
+        
+        cardPanel.addMouseListener(mouseAdapter);
+        textPanel.addMouseListener(mouseAdapter);
     
         return cardPanel;
     }
@@ -1066,6 +1070,29 @@ public class HomePage extends JPanel {
             
             // Refresh the main menu
             showMainMenu();
+        }
+    }
+
+    public void cleanup() {
+        // Stop the circular clock
+        if (circularClock != null) {
+            circularClock.stop();
+        }
+        
+        // Stop the slide timer
+        if (slideTimer != null && slideTimer.isRunning()) {
+            slideTimer.stop();
+        }
+        
+        // Reset game state
+        currentQuestionIndex = 0;
+        if (gameController != null) {
+            gameController.reset();
+        }
+        
+        // Hide clock panel
+        if (clockPanel != null) {
+            clockPanel.setVisible(false);
         }
     }
 } 
