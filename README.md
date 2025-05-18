@@ -1,8 +1,8 @@
 #  TRIVIA APPLICATION
 
-Done by: Irenee Niyibaho & Mark S. Tamakloe
+Created and Designed by: Irenee Niyibaho & Mark S. Tamakloe
 
-This is a Java-based trivia game with a real-time adaptive difficulty system. Questions dynamically adjust in difficulty based on player performance to maintain an engaging and challenging experience.
+This is a both Terminal-based and GUI-based Java trivia game application with a bank of questions in different fields that adopts our real-time adaptive questioning and recommendation system. This local app models the user experience based on real world experience. Questions dynamically adjust in difficulty based on player performance to maintain an engaging and challenging experience.
 
 ## 🧠 Game Logic
 
@@ -25,14 +25,14 @@ The game uses **min-heaps and max-heaps** to manage and prioritize questions:
 - 📋 Medium questions are selected randomly from an `ArrayList`.
 
 
-## How to Compile and Run
+## How to Compile and Run:
 
 Open your terminal and follow the steps below:
 -----------------------------------------------
 
 Step 1: Clone the repository
 ```
-https://github.com/marksivan/trivia-application-project.git
+git clone https://github.com/marksivan/trivia-application-project.git
 ```
 
 Step 2: Navigate to the project directory
@@ -54,7 +54,8 @@ cd bin
 Step 5: Run the application
 
 ```
-java GUI.MainFrame
+java trivia.BACKEND.SimulateGame (Terminal-based game app)
+java GUI.MainFrame (GUI-based game app)
 ```
 
 
