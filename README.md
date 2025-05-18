@@ -25,7 +25,7 @@ The game uses **min-heaps and max-heaps** to manage and prioritize questions:
 - 📋 Medium questions are selected randomly from an `ArrayList`.
 
 
-## How to Compile and Run
+## How to Compile and Run:
 
 Open your terminal and follow the steps below:
 -----------------------------------------------
