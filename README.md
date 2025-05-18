@@ -1,8 +1,8 @@
 #  TRIVIA APPLICATION
 
-Done by: Irenee Niyibaho & Mark S. Tamakloe
+Created and Designed by: Irenee Niyibaho & Mark S. Tamakloe
 
-This is a Java-based trivia game with a real-time adaptive difficulty system. Questions dynamically adjust in difficulty based on player performance to maintain an engaging and challenging experience.
+This is a both Terminal-based and GUI-based Java trivia game application with a bank of questions in different fields that adopts our real-time adaptive questioning and recommendation system. This local app models the user experience based on real world experience. Questions dynamically adjust in difficulty based on player performance to maintain an engaging and challenging experience.
 
 ## 🧠 Game Logic
 
@@ -54,7 +54,8 @@ cd bin
 Step 5: Run the application
 
 ```
-java GUI.MainFrame
+java trivia.BACKEND.SimulateGame (Terminal-based game app)
+java GUI.MainFrame (GUI-based game app)
 ```
 
 
