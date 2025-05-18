@@ -2,7 +2,7 @@
 
 Created and Designed by: Irenee Niyibaho & Mark S. Tamakloe
 
-This is a both Terminal-based and GUI-based Java trivia game application with a bank of questions in different fields that adopts our real-time adaptive questioning and recommendation system. This local app models the user experience based on real world experience. Questions dynamically adjust in difficulty based on player performance to maintain an engaging and challenging experience.
+This is both a Terminal-based and GUI-based Java trivia game application with a bank of questions in different fields that adopts our real-time adaptive questioning and recommendation system. This local app models the user experience based on real world experience. Questions dynamically adjust in difficulty based on a player's performance to maintain an engaging and challenging experience.
 
 ## 🧠 Game Logic
 
