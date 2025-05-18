@@ -57,10 +57,6 @@ GUI-based game app:
 ```
 java GUI.MainFrame
 ```
-```
-OR
-```
-
 Terminal-based game app:
 ```
 java trivia.BACKEND.SimulateGame
