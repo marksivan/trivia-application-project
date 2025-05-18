@@ -25,23 +25,29 @@ The game uses **min-heaps and max-heaps** to manage and prioritize questions:
 
 Open your terminal and follow the steps below:
 -----------------------------------------------
-Step 1: Navigate to the project directory
+
+Step 1: Clone the repository
+```
+https://github.com/marksivan/trivia-application-project.git
+```
+
+Step 2: Navigate to the project directory
 ```
 cd trivia-application-project
 ```
 
-Step 2: Compile all Java files to the bin directory
+Step 3: Compile all Java files to the bin directory
 
 ```
 javac -d bin $(find trivia -name "*.java")
 ```
  
-Step 3: Move into the compiled classes directory
+Step 4: Move into the compiled classes directory
 
 ```
 cd bin
 ```
-Step 4: Run the application
+Step 5: Run the application
 
 ```
 java GUI.MainFrame
