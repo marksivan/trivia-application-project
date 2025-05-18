@@ -15,9 +15,10 @@ This is a Java-based trivia game with a real-time adaptive difficulty system. Qu
 
 The game uses **min-heaps and max-heaps** to manage and prioritize questions:
 
--  **Max-Heap**: Stores hard questions and allows quick access to the most challenging ones.
--  **Min-Heap**: Stores easy questions and ensures the easiest available question is served when needed.
--  **ArrayList**: Maintains medium-difficulty questions in random order for balanced gameplay.
+- 📥 `MaxHeap.java`: Efficiently retrieves hard questions with the highest difficulty scores.
+- 📤 `MinHeap.java`: Quickly accesses the easiest questions available.
+- 📊 `PriorityQueue.java`: Manages underlying heap behavior to streamline dynamic transitions.
+- 📋 Medium questions are selected randomly from an `ArrayList`.
 
 
 ## How to Compile and Run
@@ -45,3 +46,34 @@ Step 4: Run the application
 ```
 java GUI.MainFrame
 ```
+
+
+
+## Project Structure
+trivia-application-project/
+├── bin/                            # Compiled .class files
+│
+├── trivia/
+│   ├── BACKEND/
+│   │   ├── QUESTIONS/              # CSV question banks (geography, math, science, etc.)
+│   │   ├── MaxHeap.java
+│   │   ├── MinHeap.java
+│   │   ├── PriorityQueue.java
+│   │   ├── Question.java
+│   │   └── SimulateGame.java       # Game logic and adaptive system
+│   │
+│   ├── FRONTEND/
+│   │   ├── DOM/
+│   │   │   ├── ComponentNode.java
+│   │   │   └── GenericComponents.java
+│   │   └── GUI/
+│   │       ├── AuthManager.java
+│   │       ├── GameController.java
+│   │       ├── HomePage.java
+│   │       ├── LoginPage.java
+│   │       ├── MainFrame.java      # GUI entry point
+│   │       ├── RegisterPage.java
+│   │       └── Settings.java
+│
+└── README.md
+
