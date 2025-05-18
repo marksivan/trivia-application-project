@@ -49,31 +49,4 @@ java GUI.MainFrame
 
 
 
-## Project Structure
-trivia-application-project/
-├── bin/                            # Compiled .class files
-│
-├── trivia/
-│   ├── BACKEND/
-│   │   ├── QUESTIONS/              # CSV question banks (geography, math, science, etc.)
-│   │   ├── MaxHeap.java
-│   │   ├── MinHeap.java
-│   │   ├── PriorityQueue.java
-│   │   ├── Question.java
-│   │   └── SimulateGame.java       # Game logic and adaptive system
-│   │
-│   ├── FRONTEND/
-│   │   ├── DOM/
-│   │   │   ├── ComponentNode.java
-│   │   │   └── GenericComponents.java
-│   │   └── GUI/
-│   │       ├── AuthManager.java
-│   │       ├── GameController.java
-│   │       ├── HomePage.java
-│   │       ├── LoginPage.java
-│   │       ├── MainFrame.java      # GUI entry point
-│   │       ├── RegisterPage.java
-│   │       └── Settings.java
-│
-└── README.md
-
+<pre lang="markdown"> ## 📁 Project Structure ``` trivia-application-project/ ├── bin/ # Compiled .class files │ ├── trivia/ │ ├── BACKEND/ │ │ ├── QUESTIONS/ # CSV question banks (geography, math, science, etc.) │ │ ├── MaxHeap.java │ │ ├── MinHeap.java │ │ ├── PriorityQueue.java │ │ ├── Question.java │ │ └── SimulateGame.java # Game logic and adaptive system │ │ │ ├── FRONTEND/ │ │ ├── DOM/ │ │ │ ├── ComponentNode.java │ │ │ └── GenericComponents.java │ │ └── GUI/ │ │ ├── AuthManager.java │ │ ├── GameController.java │ │ ├── HomePage.java │ │ ├── LoginPage.java │ │ ├── MainFrame.java # GUI entry point │ │ ├── RegisterPage.java │ │ └── Settings.java │ └── README.md ``` </pre>
