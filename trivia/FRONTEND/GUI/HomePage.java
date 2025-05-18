@@ -1,10 +1,15 @@
+/*
+ * This class represent the homepage on the landing Jframe.
+ * It encapsulates the logic to organise different DOM like components on the GUI.
+ * It also encapsulates the logic to handle the different events,states, and actions on the GUI.
+ */
+
 package GUI;
 import java.awt.*;
 import javax.swing.*;
 import DOM.GenericComponents;
 import trivia.BACKEND.Question;
-
-public class HomePage extends JPanel {
+public class HomePage extends JPanel { 
     private JPanel rootPanel;
     private GenericComponents.QuizPanel contentPanel;
     private GenericComponents.QuizCircularClock circularClock;
@@ -17,6 +22,7 @@ public class HomePage extends JPanel {
     private String currentCategory;
     private Question currentQuestion;
 
+    // This method constructs (It is the constructor) the landing page after login and the home for the user.
     public HomePage() {
         gameController = new GameController();
         setLayout(new BorderLayout());
@@ -32,6 +38,7 @@ public class HomePage extends JPanel {
         showMainMenu();
     }
 
+    // This method sets up the header of the homepage.
     private void setupHeader() {
         GenericComponents.QuizHeader header = new GenericComponents.QuizHeader(
             "Trivia Game", 
@@ -65,12 +72,14 @@ public class HomePage extends JPanel {
         rootPanel.add(headerContainer, BorderLayout.NORTH);
     }
 
+    // This method sets up the footer of the homepage.
     private void setupFooter() {
         footerPanel = new JPanel(new BorderLayout(10, 10));
         footerPanel.setBackground(GenericComponents.ThemeManager.getFooter());
         rootPanel.add(footerPanel, BorderLayout.SOUTH);
     }
 
+    // This method sets up the content panel of the homepage.
     private void setupContentPanel() {
         contentPanel = new GenericComponents.QuizPanel(
             GenericComponents.ThemeManager.getBackground(),
@@ -82,6 +91,7 @@ public class HomePage extends JPanel {
         rootPanel.add(contentPanel.getComponent(), BorderLayout.CENTER);
     }
 
+    // This method shows the main menu of the homepage.
     private void showMainMenu() {
         JPanel content = (JPanel) contentPanel.getComponent();
         content.removeAll();
@@ -109,6 +119,7 @@ public class HomePage extends JPanel {
         content.repaint();
     }
 
+    // This method creates the category panel of the homepage.
     private JPanel createCategoryPanel() {
         JPanel categoryPanel = new JPanel(new GridBagLayout());
         categoryPanel.setOpaque(false);
@@ -132,6 +143,7 @@ public class HomePage extends JPanel {
         return categoryPanel;
     }
 
+    // This method creates the scroll pane of the homepage.
     private JScrollPane createScrollPane(JPanel panel) {
         JScrollPane scrollPane = new JScrollPane(panel);
         scrollPane.setBorder(null);
@@ -175,6 +187,7 @@ public class HomePage extends JPanel {
         return scrollPane;
     }
 
+    // This method creates the category card of the homepage.
     private JPanel createCategoryCard(String category) {
         Color defaultColor = GenericComponents.ThemeManager.getButton();
         Color hoverColor = new Color(0xA5D6A7); // light green
@@ -212,11 +225,17 @@ public class HomePage extends JPanel {
                 startGame(false, category);
             }
         });
+        textPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent e) {
+                startGame(false, category);
+            }
+        });
     
         return cardPanel;
     }
     
 
+    // This method creates the text panel of the homepage.
     private JPanel createTextPanel(String category) {
         JPanel textPanel = new JPanel(new GridBagLayout());
         textPanel.setOpaque(false);
@@ -237,6 +256,7 @@ public class HomePage extends JPanel {
         return textPanel;
     }
 
+    // This method creates the button panel of the homepage.
     private JPanel createButtonPanel() {
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 15));
         buttonPanel.setOpaque(false);
@@ -255,6 +275,7 @@ public class HomePage extends JPanel {
         return buttonPanel;
     }
 
+    // This method creates the button of the homepage.
     private GenericComponents.QuizButton createButton(String text, java.util.function.Consumer<java.awt.event.ActionEvent> onClick) {
         return new GenericComponents.QuizButton(
             text,
@@ -267,6 +288,7 @@ public class HomePage extends JPanel {
         );
     }
 
+    // This method handles the home button of the homepage.
     private void handleHomeButton() {
         if (currentQuestionIndex > 0) {
             int confirm = JOptionPane.showConfirmDialog(
@@ -301,6 +323,7 @@ public class HomePage extends JPanel {
         }
     }
 
+    // This method starts the game.
     private void startGame(boolean isRandom, String category) {
         // Array of all available categories
         String[] categories = {"Math", "Science", "Verbal Reasoning", "Technology", "Sports", "World History", "Geography", "Health and Medicine"};

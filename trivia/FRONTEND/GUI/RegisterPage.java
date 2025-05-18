@@ -1,3 +1,8 @@
+/*
+ * This class represent the register page on the landing Jframe.
+ * It contains the register form and the back to login button.
+ * It also encapsulates the logic to handle the different events,states, and actions on the GUI when the user clicks the register button.
+ */
 package GUI;
 import javax.swing.*;
 import java.awt.*;
@@ -18,6 +23,7 @@ public class RegisterPage extends JPanel {
         initializeComponents();
     }
 
+    // This method initializes the components of the register page.
     private void initializeComponents() {
         JPanel mainPanel = new JPanel(new GridBagLayout());
         mainPanel.setBackground(GenericComponents.ThemeManager.getBackground());
@@ -140,6 +146,7 @@ public class RegisterPage extends JPanel {
         add(mainPanel, BorderLayout.CENTER);
     }
 
+    // This method handles the register button of the register page.
     private void handleRegister() {
         String username = usernameField.getText().trim();
         String password = new String(passwordField.getPassword());
@@ -175,13 +182,13 @@ public class RegisterPage extends JPanel {
         }
 
         // Show loading state
-        errorLabel.setText("Creating account...");
+        errorLabel.setText("Creating account.........................");
         errorLabel.setForeground(GenericComponents.ThemeManager.getText());
 
         Timer timer = new Timer(500, e -> {
             // Try to register the user
             if (AuthManager.getInstance().registerUser(username, password)) {
-                // Auto-login after successful registration
+                // Autologin after successful registration
                 if (AuthManager.getInstance().login(username, password)) {
                     errorLabel.setText("");
                     onRegisterComplete.accept(true);
@@ -198,6 +205,7 @@ public class RegisterPage extends JPanel {
         timer.start();
     }
 
+    // This method checks if the password is valid.
     private boolean isValidPassword(String password) {
         if (password.length() < 8) return false;
         

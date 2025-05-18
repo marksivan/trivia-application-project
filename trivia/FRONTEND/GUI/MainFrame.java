@@ -1,3 +1,8 @@
+/*
+ * This class represent the main frame of the application.
+ * It contains the login page, register page, and home page.
+ * It also encapsulates the logic to handle the different events,states, and actions on the GUI.
+ */
 package GUI;
 import javax.swing.*;
 import java.awt.*;
@@ -57,6 +62,7 @@ public class MainFrame extends JFrame {
         Settings.getInstance().setAutoSubmitOnTimeUp(true);
     }
 
+    // This method shows the login page.
     public void showLoginPage() {
         cardLayout.show(mainPanel, "LOGIN");
         loginPage.requestFocusInWindow();
@@ -64,6 +70,7 @@ public class MainFrame extends JFrame {
         loginPage.repaint();
     }
 
+    // This method shows the register page.
     private void showRegisterPage() {
         cardLayout.show(mainPanel, "REGISTER");
         registerPage.requestFocusInWindow();
@@ -71,6 +78,7 @@ public class MainFrame extends JFrame {
         registerPage.repaint();
     }
 
+    // This method shows the home page.
     private void showHomePage() {
         if (homePage == null) {
             homePage = new HomePage();

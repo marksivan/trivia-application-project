@@ -1,3 +1,7 @@
+/*
+ * This class represent the settings of the application.
+ * It contains the settings for the game, UI, and theme.
+ */
 package GUI;
 
 import java.awt.Color;

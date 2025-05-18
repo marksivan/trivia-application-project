@@ -1,3 +1,8 @@
+/*
+ * This class represent the login page on the landing Jframe.
+ * It contains the login form and the register button.
+ * It also encapsulates the logic to handle the different events,states, and actions on the GUI when the user clicks the login button.
+ */
 package GUI;
 import javax.swing.*;
 import java.awt.*;
@@ -184,7 +189,7 @@ public class LoginPage extends JPanel {
         }
         
         // Show loading state
-        errorLabel.setText("Logging in...");
+        errorLabel.setText("Logging in.........................");
         errorLabel.setForeground(GenericComponents.ThemeManager.getText());
         
         // Simulate network delay for better user experience
