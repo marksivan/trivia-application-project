@@ -302,26 +302,43 @@ public class HomePage extends JPanel {
                 JOptionPane.YES_NO_OPTION
             );
             if (confirm == JOptionPane.YES_OPTION) {
+                // Stop all timers first
+                if (slideTimer != null) {
+                    slideTimer.stop();
+                    slideTimer = null;
+                }
+                if (circularClock != null) {
+                    circularClock.stop();
+                    circularClock.reset();
+                }
+                
                 // Reset game state
-                circularClock.stop();
                 currentQuestionIndex = 0;
                 clockPanel.setVisible(false);
                 if (gameController != null) {
                     gameController.reset();
-                }
-                Settings.getInstance().setAutoSubmitOnTimeUp(false);
+                } 
                 // Show main menu
                 showMainMenu();
             }
-
-        }else{
+        } else {
+            // Stop all timers first
+            if (slideTimer != null) {
+                slideTimer.stop();
+                slideTimer = null;
+            }
+            if (circularClock != null) {
+                circularClock.stop();
+                circularClock.reset();
+            }
+            
             // Reset game state
-            circularClock.stop();
             currentQuestionIndex = 0;
             clockPanel.setVisible(false);
             if (gameController != null) {
                 gameController.reset();
             }
+            
             // Show main menu
             showMainMenu();
         }
