@@ -283,6 +283,7 @@ public class HomePage extends JPanel {
                 if (gameController != null) {
                     gameController.reset();
                 }
+                Settings.getInstance().setAutoSubmitOnTimeUp(false);
                 // Show main menu
                 showMainMenu();
             }
@@ -432,7 +433,10 @@ public class HomePage extends JPanel {
         if (Settings.getInstance().isAutoSubmitOnTimeUp()) {
             // Use a timer instead of the undefined method
             slideTimer = new Timer(Settings.getInstance().getQuestionTimeLimit() * 1000, e -> {
-                handleAnswer(-1); // Invalid answer when time is up
+                if (Settings.getInstance().isAutoSubmitOnTimeUp()) {
+                    handleAnswer(-1); // Invalid answer when time is up
+                    Settings.getInstance().setAutoSubmitOnTimeUp(true);
+                }
             });
             slideTimer.setRepeats(false);
             slideTimer.start();
@@ -467,13 +471,16 @@ public class HomePage extends JPanel {
         if (currentQuestion == null) {
             // Handle the case where currentQuestion is null (e.g., timer expired between questions)
             feedbackText = "Time's up! Moving to next question.";
-            feedbackColor = new Color(231, 76, 60); // Red
+            feedbackColor = new Color(231, 76, 60);
         } else {
             isCorrect = gameController.checkAnswer(answerIndex);
             
             if (isCorrect) {
                 feedbackText = "Correct! +" + gameController.getQuestionScore(currentQuestion) + " points";
-                feedbackColor = new Color(46, 204, 113); // Green
+                feedbackColor = new Color(46, 204, 113);
+            } else if (answerIndex == -1) {
+                feedbackText = "Time's up! Moving to next question.";
+                feedbackColor = new Color(231, 76, 60);
             } else {
                 String correctAnswer = currentQuestion.getAnswerOptions()[currentQuestion.getCorrectAnswerIndex()];
                 feedbackText = "Incorrect. The correct answer was: " + 

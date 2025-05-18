@@ -80,7 +80,9 @@ public class SimulateGame{
             }
         }
     }
-		public void playGame() {
+
+    //playGame is a public method that plays the game.
+    public void playGame() {
 	    Scanner scanner = new Scanner(System.in);
 
 	    try {

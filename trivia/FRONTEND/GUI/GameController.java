@@ -1,11 +1,12 @@
-package GUI;
-import trivia.BACKEND.SimulateGame;
-import trivia.BACKEND.Question;
-import java.util.ArrayList;
 /**
  * GameController acts as an adapter between the terminal-based SimulateGame
  * and the GUI-based HomePage.
  */
+package GUI;
+import trivia.BACKEND.SimulateGame;
+import trivia.BACKEND.Question;
+import java.util.ArrayList;
+
 
 public class GameController {
     private SimulateGame game;
@@ -21,16 +22,17 @@ public class GameController {
     private int totalPossibleScore;
 
     public GameController() {
-        game = new SimulateGame();
+        game = new SimulateGame(); //Create a new instance of the SimulateGame class from the backend.
         currentQuestionIndex = 0;
         score = 0;
-        totalQuestionsToAsk = Settings.getInstance().getQuestionsPerGame();
+        totalQuestionsToAsk = Settings.getInstance().getQuestionsPerGame(); //Get the number of questions per game from the settings.
         currentQuestions = new ArrayList<>();
         wrongStreak = 0;
         correctStreak = 0;
         correctAnswers = 0;
         wrongAnswers = 0;
         totalPossibleScore = 0;
+        Settings.getInstance().setAutoSubmitOnTimeUp(true);
     }
 
     /**
@@ -38,10 +40,10 @@ public class GameController {
      */
 
     public void initGame(int categoryChoice) {
-        game.ingestQuestions(categoryChoice);
+        game.ingestQuestions(categoryChoice); //Ingest the questions from the backend.
         // Initialize other game state
-        currentQuestionIndex = 0;
-        score = 0;
+        currentQuestionIndex = 0; //Initialize the current question index to 0.
+        score = 0; 
         wrongStreak = 0;
         correctStreak = 0;
         correctAnswers = 0;
@@ -49,9 +51,8 @@ public class GameController {
         totalPossibleScore = 0;
         currentQuestions.clear();
         // Pre-populate some questions from medium difficulty
-
-       if (game.mediumQuestions != null && !game.mediumQuestions.isEmpty()) {
-            currentQuestions.addAll(game.mediumQuestions);
+        if (game.mediumQuestions != null && !game.mediumQuestions.isEmpty()) {
+            currentQuestions.addAll(game.mediumQuestions); //Add the medium questions to the current questions.
         }
     }
 
@@ -60,7 +61,7 @@ public class GameController {
      */
     
     public Question getNextQuestion() {
-        if (currentQuestionIndex+1 >= totalQuestionsToAsk) {
+        if (currentQuestionIndex >= totalQuestionsToAsk) {
             return null; // Game over
         }
         // Logic similar to SimulateGame's playGame method
@@ -140,7 +141,7 @@ public class GameController {
      * Check if the game is over
      */
     public boolean isGameOver() {
-        if (currentQuestionIndex >= totalQuestionsToAsk) {
+        if (currentQuestionIndex >= totalQuestionsToAsk+1) {
 
             return true;
         } else {

@@ -54,6 +54,7 @@ public class MainFrame extends JFrame {
                 mainPanel.repaint();
             }
         });
+        Settings.getInstance().setAutoSubmitOnTimeUp(true);
     }
 
     public void showLoginPage() {
@@ -96,10 +97,5 @@ public class MainFrame extends JFrame {
             MainFrame frame = new MainFrame();
             frame.setVisible(true);
         });
-    }
-
-    public static Object getInstance() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getInstance'");
     }
 } 

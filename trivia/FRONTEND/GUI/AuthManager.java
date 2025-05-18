@@ -86,7 +86,7 @@ public class AuthManager {
             rememberedUser = props.getProperty(REMEMBERED_USER_KEY);
             //Catch the exception if the remembered user cannot be loaded from the data file.
         } catch (IOException e) {
-            //Set the remembered user to null.
+            //Set the remembered user to null if the remembered user cannot be loaded from the data file.
             rememberedUser = null;
         }
     }
