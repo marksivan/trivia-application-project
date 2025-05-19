@@ -1,4 +1,4 @@
-#  Trivia Application
+# Adaptive Trivia Application
 
 Created and Designed by: **Irenee Niyibaho & Mark Sivan Tamakloe**
 
