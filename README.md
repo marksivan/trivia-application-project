@@ -1,4 +1,4 @@
-#  TRIVIA APPLICATION
+#  Trivia Application
 
 Created and Designed by: **Irenee Niyibaho & Mark Sivan Tamakloe**
 
